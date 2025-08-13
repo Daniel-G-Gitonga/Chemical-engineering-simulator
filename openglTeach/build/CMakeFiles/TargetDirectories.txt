@@ -1,0 +1,3 @@
+C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/revOp.dir
+C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/edit_cache.dir
+C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,8 @@
+C:/gameEngineTutorial/build/CMakeFiles/edit_cache.dir
+C:/gameEngineTutorial/build/CMakeFiles/rebuild_cache.dir
+C:/gameEngineTutorial/build/sandBox/CMakeFiles/sandbox.dir
+C:/gameEngineTutorial/build/sandBox/CMakeFiles/edit_cache.dir
+C:/gameEngineTutorial/build/sandBox/CMakeFiles/rebuild_cache.dir
+C:/gameEngineTutorial/build/rose/CMakeFiles/rose.dir
+C:/gameEngineTutorial/build/rose/CMakeFiles/edit_cache.dir
+C:/gameEngineTutorial/build/rose/CMakeFiles/rebuild_cache.dir

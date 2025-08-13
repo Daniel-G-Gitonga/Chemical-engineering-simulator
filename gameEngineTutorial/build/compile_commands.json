@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/gameEngineTutorial/build/sandBox",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/sandbox.dir/includes_CXX.rsp -g -o CMakeFiles\\sandbox.dir\\main\\main.cpp.obj -c C:\\gameEngineTutorial\\sandBox\\main\\main.cpp",
+  "file": "C:/gameEngineTutorial/sandBox/main/main.cpp",
+  "output": "sandBox/CMakeFiles/sandbox.dir/main/main.cpp.obj"
+},
+{
+  "directory": "C:/gameEngineTutorial/build/rose",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DROSE_BUILD_DLL -Drose_EXPORTS @CMakeFiles/rose.dir/includes_CXX.rsp -g -Winvalid-pch -x c++-header -include C:/gameEngineTutorial/build/rose/CMakeFiles/rose.dir/cmake_pch.hxx -o CMakeFiles\\rose.dir\\cmake_pch.hxx.gch -c C:\\gameEngineTutorial\\build\\rose\\CMakeFiles\\rose.dir\\cmake_pch.hxx.cxx",
+  "file": "C:/gameEngineTutorial/build/rose/CMakeFiles/rose.dir/cmake_pch.hxx.cxx",
+  "output": "rose/CMakeFiles/rose.dir/cmake_pch.hxx.gch"
+},
+{
+  "directory": "C:/gameEngineTutorial/build/rose",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DROSE_BUILD_DLL -Drose_EXPORTS @CMakeFiles/rose.dir/includes_CXX.rsp -g -Winvalid-pch -include C:/gameEngineTutorial/build/rose/CMakeFiles/rose.dir/cmake_pch.hxx -o CMakeFiles\\rose.dir\\main\\application.cpp.obj -c C:\\gameEngineTutorial\\rose\\main\\application.cpp",
+  "file": "C:/gameEngineTutorial/rose/main/application.cpp",
+  "output": "rose/CMakeFiles/rose.dir/main/application.cpp.obj"
+},
+{
+  "directory": "C:/gameEngineTutorial/build/rose",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DROSE_BUILD_DLL -Drose_EXPORTS @CMakeFiles/rose.dir/includes_CXX.rsp -g -Winvalid-pch -include C:/gameEngineTutorial/build/rose/CMakeFiles/rose.dir/cmake_pch.hxx -o CMakeFiles\\rose.dir\\main\\log.cpp.obj -c C:\\gameEngineTutorial\\rose\\main\\log.cpp",
+  "file": "C:/gameEngineTutorial/rose/main/log.cpp",
+  "output": "rose/CMakeFiles/rose.dir/main/log.cpp.obj"
+}
+]

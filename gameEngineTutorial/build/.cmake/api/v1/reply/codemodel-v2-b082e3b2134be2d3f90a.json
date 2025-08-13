@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.31.3"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "sandBox",
+					"jsonFile" : "directory-sandBox-Debug-899486a36a458ba80673.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.31.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "sandBox",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "rose",
+					"jsonFile" : "directory-rose-Debug-f26e11489ea4b8c5b73f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.31.3"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "rose",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "roseProject"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "sandbox",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "rose",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "rose::@1858d6717a6d39e1aeb9",
+					"jsonFile" : "target-rose-Debug-ee16cad4a0f26463379b.json",
+					"name" : "rose",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "sandbox::@28d77be3f5211c3d6de9",
+					"jsonFile" : "target-sandbox-Debug-5edd29fd771e30d898fc.json",
+					"name" : "sandbox",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/gameEngineTutorial/build",
+		"source" : "C:/gameEngineTutorial"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

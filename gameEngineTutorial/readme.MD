@@ -9,24 +9,3 @@ engineheaders.h is aheaderfile that contains all headers that we need from the e
 we will include all headers here then include this header in our sandbox main file.
 (__nb__)==> we specified to cmake to look for includes in the rose subfolder
 ============================================================================
-now, chenye ni most important hapa ni, like libraries zenye zote tutatumia ku include kwa hii engine
-tutazispecify peke kwa rose alafu during runtime tushikanishe hiyo dll yenye iko na kila kitu kwa sandbox.
-
-hii ni best ju hatutashida tukilink ma library most.. hiyo inaconsume masaa viajab😂😂
-
-[{a_bythe_way}]
-[(ANYWAY)]__wacha-niadd-error-logging-na-ii-library-spdlog...aukitu-kama-io__
-\\bytha leo nilifika cu, the 8th july 2025...:: haiwahusu lakini tulisoma kuhusu
-the heart and all that we should feed it and how wes should guard it...
-we kama uko intrested soma proverbs 4:23
-                           luke 6:45
-                           jeremiar(verse talking about how the heart is the greatest deceiver.)
-
-
-
-
-
-
-
-
-PLEASE NOTE[FOR_EVERY_CPP_FILE_YOU_MAKE_ADD_IT_TO_cmake_LINK_LIBRARY_FUNCTION...]]..."({EWE})"

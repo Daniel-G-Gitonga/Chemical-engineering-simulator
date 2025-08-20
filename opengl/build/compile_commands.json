@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/USER/Desktop/opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\main.cpp.obj -c C:\\Users\\USER\\Desktop\\opengl\\src\\main.cpp",
+  "file": "C:/Users/USER/Desktop/opengl/src/main.cpp",
+  "output": "CMakeFiles/OpenGL.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/USER/Desktop/opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/OpenGL.dir/includes_C.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\glad.c.obj -c C:\\Users\\USER\\Desktop\\opengl\\src\\glad.c",
+  "file": "C:/Users/USER/Desktop/opengl/src/glad.c",
+  "output": "CMakeFiles/OpenGL.dir/src/glad.c.obj"
+}
+]

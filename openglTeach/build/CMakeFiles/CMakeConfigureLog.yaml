@@ -2,22 +2,136 @@
 ---
 events:
   -
-    kind: "message-v1"
+    kind: "find-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
       - "CMakeLists.txt:2 (project)"
-    message: |
-      The system is: Windows - 10.0.19045 - AMD64
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+      - "/bin/"
+      - "/usr/bin/"
+      - "/usr/local/bin/"
+    found: "/data/data/com.termux/files/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Android - 24 - aarch64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/gmake"
+    found: "/data/data/com.termux/files/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/"
+    found: "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: C:/msys64/ucrt64/bin/gcc.exe 
+      Compiler: /data/data/com.termux/files/usr/bin/cc 
       Build flags: 
       Id flags:  
       
@@ -25,21 +139,466 @@ events:
       0
       
       
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
-      The C compiler identification is GNU, found in:
-        C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/3.31.3/CompilerIdC/a.exe
+      The C compiler identification is Clang, found in:
+        /data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/4.1.0/CompilerIdC/a.out
       
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar"
+      - "ar"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ar"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-strip"
+      - "strip"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-strip"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld.lld"
+      - "ld"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/ld.lld"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-nm"
+      - "nm"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-nm"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-dlltool"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/llvm-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-20.1"
+      - "llvm-ar-20"
+      - "llvm-ar20"
+      - "llvm-ar"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/llvm-ar-20.1"
+      - "/data/data/com.termux/files/usr/bin/llvm-ar-20"
+      - "/data/data/com.termux/files/usr/bin/llvm-ar20"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ar"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-20.1"
+      - "llvm-ranlib-20"
+      - "llvm-ranlib20"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib-20.1"
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib-20"
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib20"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-20.1"
+      - "clang-scan-deps-20"
+      - "clang-scan-deps20"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps-20.1"
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps-20"
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps20"
+    found: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    found: "/data/data/com.termux/files/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/"
+    found: "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: C:/msys64/ucrt64/bin/g++.exe 
+      Compiler: /data/data/com.termux/files/usr/bin/c++ 
       Build flags: 
       Id flags:  
       
@@ -47,23 +606,120 @@ events:
       0
       
       
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
-      The CXX compiler identification is GNU, found in:
-        C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/3.31.3/CompilerIdCXX/a.exe
+      The CXX compiler identification is Clang, found in:
+        /data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/4.1.0/CompilerIdCXX/a.out
       
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "LLVM archiver"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ar-20.1"
+      - "llvm-ar-20"
+      - "llvm-ar20"
+      - "llvm-ar"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/llvm-ar-20.1"
+      - "/data/data/com.termux/files/usr/bin/llvm-ar-20"
+      - "/data/data/com.termux/files/usr/bin/llvm-ar20"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ar"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "Generate index for LLVM archive"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "llvm-ranlib-20.1"
+      - "llvm-ranlib-20"
+      - "llvm-ranlib20"
+      - "llvm-ranlib"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib-20.1"
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib-20"
+      - "/data/data/com.termux/files/usr/bin/llvm-ranlib20"
+    found: "/data/data/com.termux/files/usr/bin/llvm-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
+    description: "`clang-scan-deps` dependency scanner"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-scan-deps-20.1"
+      - "clang-scan-deps-20"
+      - "clang-scan-deps20"
+      - "clang-scan-deps"
+    candidate_directories:
+      - "/data/data/com.termux/files/usr/bin/"
+    searched_directories:
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps-20.1"
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps-20"
+      - "/data/data/com.termux/files/usr/bin/clang-scan-deps20"
+    found: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f"
-      binary: "C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f"
+      source: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY"
+      binary: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -71,284 +727,164 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f'
+        Change Dir: '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_a2207/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2207.dir\\build.make CMakeFiles/cmTC_a2207.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f'
-        Building C object CMakeFiles/cmTC_a2207.dir/CMakeCCompilerABI.c.obj
-        C:\\msys64\\ucrt64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
-        Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_90d8c/fast
+        /data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_90d8c.dir/build.make CMakeFiles/cmTC_90d8c.dir/build
+        make[1]: Entering directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY'
+        Building C object CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o
+        /data/data/com.termux/files/usr/bin/cc   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c
+        clang version 20.1.8
+        Target: aarch64-unknown-linux-android24
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.2.0 (Rev3, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_a2207.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\USER\\AppData\\Local\\Temp\\ccKrCrth.s
-        GNU C17 (Rev3, Built by MSYS2 project) version 13.2.0 (x86_64-w64-mingw32)
-        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
-        
-        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"
-        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
-        ignoring nonexistent directory "/ucrt64/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
-        ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
-        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        InstalledDir: /data/data/com.termux/files/usr/bin
+         (in-process)
+         "/data/data/com.termux/files/usr/bin/clang-20" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY -v -fcoverage-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY -resource-dir /data/data/com.termux/files/usr/lib/clang/20 -dependency-file CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files/usr/bin/../.. -internal-isystem /data/data/com.termux/files/usr/lib/clang/20/include -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include -O2 -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -x c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 20.1.8 based upon LLVM 20.1.8 default target aarch64-unknown-linux-android24
+        ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../usr/local/include"
+        ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../include"
         #include "..." search starts here:
         #include <...> search starts here:
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed
+         /data/data/com.termux/files/usr/lib/clang/20/include
+         /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android
+         /data/data/com.termux/files/usr/bin/../../usr/include
         End of search list.
-        Compiler executable checksum: 9ededbb617523f3ae037d5140d325cc4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj C:\\Users\\USER\\AppData\\Local\\Temp\\ccKrCrth.s
-        GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.'
-        Linking C executable cmTC_a2207.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a2207.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a2207.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_a2207.dir/objects.a @CMakeFiles\\cmTC_a2207.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\gcc.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a -Wl,--no-whole-archive -o cmTC_a2207.exe -Wl,--out-implib,libcmTC_a2207.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe
-        COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Linking C executable cmTC_90d8c
+        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90d8c.dir/link.txt --verbose=1
+        clang version 20.1.8
+        Target: aarch64-unknown-linux-android24
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.2.0 (Rev3, Built by MSYS2 project) 
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2207.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a2207.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccJg4o9p.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2207.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a --no-whole-archive --out-implib libcmTC_a2207.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
-        collect2 version 13.2.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccJg4o9p.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2207.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a --no-whole-archive --out-implib libcmTC_a2207.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
-        GNU ld (GNU Binutils) 2.41
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2207.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a2207.'
-        mingw32-make[1]: Leaving directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f'
+        InstalledDir: /data/data/com.termux/files/usr/bin
+         "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files/usr/bin/../.. -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --no-rosegment --hash-style=gnu -rpath=/data/data/com.termux/files/usr/bin/../../usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_90d8c /data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/bin/../../usr/lib -L/system/lib64 CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o
+        /data/data/com.termux/files/usr/bin/cc -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -o cmTC_90d8c
+        make[1]: Leaving directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+          add: [/data/data/com.termux/files/usr/lib/clang/20/include]
+          add: [/data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android]
+          add: [/data/data/com.termux/files/usr/bin/../../usr/include]
         end of search list found
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include] ==> [C:/msys64/ucrt64/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
-        implicit include dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include;C:/msys64/ucrt64/include;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        collapse include dir [/data/data/com.termux/files/usr/lib/clang/20/include] ==> [/data/data/com.termux/files/usr/lib/clang/20/include]
+        collapse include dir [/data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android] ==> [/data/data/com.termux/files/usr/include/aarch64-linux-android]
+        collapse include dir [/data/data/com.termux/files/usr/bin/../../usr/include] ==> [/data/data/com.termux/files/usr/include]
+        implicit include dirs: [/data/data/com.termux/files/usr/lib/clang/20/include;/data/data/com.termux/files/usr/include/aarch64-linux-android;/data/data/com.termux/files/usr/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_a2207/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_a2207.dir\\build.make CMakeFiles/cmTC_a2207.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-p11n9f']
-        ignore line: [Building C object CMakeFiles/cmTC_a2207.dir/CMakeCCompilerABI.c.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\gcc.exe   -v -o CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_90d8c/fast]
+        ignore line: [/data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_90d8c.dir/build.make CMakeFiles/cmTC_90d8c.dir/build]
+        ignore line: [make[1]: Entering directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY']
+        ignore line: [Building C object CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/data/data/com.termux/files/usr/bin/cc   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang version 20.1.8]
+        ignore line: [Target: aarch64-unknown-linux-android24]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.2.0 (Rev3  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/cc1.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles\\cmTC_a2207.dir\\ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=nocona -version -o C:\\Users\\USER\\AppData\\Local\\Temp\\ccKrCrth.s]
-        ignore line: [GNU C17 (Rev3  Built by MSYS2 project) version 13.2.0 (x86_64-w64-mingw32)]
-        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
-        ignore line: []
-        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"]
-        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
-        ignore line: [ignoring nonexistent directory "/ucrt64/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
-        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/data/data/com.termux/files/usr/bin/clang-20" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY -v -fcoverage-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-6e2zJY -resource-dir /data/data/com.termux/files/usr/lib/clang/20 -dependency-file CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files/usr/bin/../.. -internal-isystem /data/data/com.termux/files/usr/lib/clang/20/include -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include -O2 -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o -x c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 20.1.8 based upon LLVM 20.1.8 default target aarch64-unknown-linux-android24]
+        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        ignore line: [ /data/data/com.termux/files/usr/lib/clang/20/include]
+        ignore line: [ /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android]
+        ignore line: [ /data/data/com.termux/files/usr/bin/../../usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 9ededbb617523f3ae037d5140d325cc4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj C:\\Users\\USER\\AppData\\Local\\Temp\\ccKrCrth.s]
-        ignore line: [GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_a2207.dir\\CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_a2207.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_a2207.dir\\link.txt --verbose=1]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_a2207.dir/objects.a]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_a2207.dir/objects.a @CMakeFiles\\cmTC_a2207.dir\\objects1.rsp]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\gcc.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a -Wl --no-whole-archive -o cmTC_a2207.exe -Wl --out-implib libcmTC_a2207.dll.a -Wl --major-image-version 0 --minor-image-version 0]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\gcc.exe]
-        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Linking C executable cmTC_90d8c]
+        ignore line: [/data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90d8c.dir/link.txt --verbose=1]
+        ignore line: [clang version 20.1.8]
+        ignore line: [Target: aarch64-unknown-linux-android24]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.2.0 (Rev3  Built by MSYS2 project) ]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a2207.exe' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_a2207.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccJg4o9p.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2207.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a --no-whole-archive --out-implib libcmTC_a2207.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe] ==> ignore
-          arg [-plugin] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll] ==> ignore
-          arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccJg4o9p.res] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
-          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
-          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
+        link line: [ "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files/usr/bin/../.. -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --no-rosegment --hash-style=gnu -rpath=/data/data/com.termux/files/usr/bin/../../usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_90d8c /data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/bin/../../usr/lib -L/system/lib64 CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o]
+          arg [/data/data/com.termux/files/usr/bin/ld.lld] ==> ignore
+          arg [--sysroot=/data/data/com.termux/files/usr/bin/../..] ==> ignore
+          arg [-EL] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=16384] ==> ignore
+          arg [--no-rosegment] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-rpath=/data/data/com.termux/files/usr/bin/../../usr/lib] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
           arg [-m] ==> ignore
-          arg [i386pep] ==> ignore
-          arg [-Bdynamic] ==> search dynamic
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_a2207.exe] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..]
-          arg [-v] ==> ignore
-          arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_a2207.dir/objects.a] ==> ignore
-          arg [--no-whole-archive] ==> ignore
-          arg [--out-implib] ==> ignore
-          arg [libcmTC_a2207.dll.a] ==> ignore
-          arg [--major-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [--minor-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [-lmingw32] ==> lib [mingw32]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lgcc_eh] ==> lib [gcc_eh]
-          arg [-lmoldname] ==> lib [moldname]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lpthread] ==> lib [pthread]
-          arg [-ladvapi32] ==> lib [advapi32]
-          arg [-lshell32] ==> lib [shell32]
-          arg [-luser32] ==> lib [user32]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lmingw32] ==> lib [mingw32]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lgcc_eh] ==> lib [gcc_eh]
-          arg [-lmoldname] ==> lib [moldname]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        ignore line: [collect2 version 13.2.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccJg4o9p.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_a2207.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_a2207.dir/objects.a --no-whole-archive --out-implib libcmTC_a2207.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        linker tool for 'C': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
-        remove lib [gcc_eh]
-        remove lib [msvcrt]
-        remove lib [gcc_eh]
-        remove lib [msvcrt]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o] ==> [C:/msys64/ucrt64/lib/crt2.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o] ==> [C:/msys64/ucrt64/lib/default-manifest.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc] ==> [C:/msys64/ucrt64/lib/gcc]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> [C:/msys64/ucrt64/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> [C:/msys64/ucrt64/lib]
-        implicit libs: [mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32]
-        implicit objs: [C:/msys64/ucrt64/lib/crt2.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o;C:/msys64/ucrt64/lib/default-manifest.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        implicit dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0;C:/msys64/ucrt64/lib/gcc;C:/msys64/ucrt64/x86_64-w64-mingw32/lib;C:/msys64/ucrt64/lib]
+          arg [cmTC_90d8c] ==> ignore
+          arg [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o] ==> obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o]
+          arg [-L/data/data/com.termux/files/usr/bin/../../usr/lib] ==> dir [/data/data/com.termux/files/usr/bin/../../usr/lib]
+          arg [-L/system/lib64] ==> dir [/system/lib64]
+          arg [CMakeFiles/cmTC_90d8c.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o] ==> obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o]
+        linker tool for 'C': /data/data/com.termux/files/usr/bin/ld.lld
+        remove lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        remove lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        collapse obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o] ==> [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o]
+        collapse obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o] ==> [/data/data/com.termux/files/usr/lib/crtend_android.o]
+        collapse library dir [/data/data/com.termux/files/usr/bin/../../usr/lib] ==> [/data/data/com.termux/files/usr/lib]
+        collapse library dir [/system/lib64] ==> [/system/lib64]
+        implicit libs: [-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o;/data/data/com.termux/files/usr/lib/crtend_android.o]
+        implicit dirs: [/data/data/com.termux/files/usr/lib;/system/lib64]
         implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the C compiler's linker: "C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe" "-v"
-      GNU ld (GNU Binutils) 2.41
+      Running the C compiler's linker: "/data/data/com.termux/files/usr/bin/ld.lld" "-v"
+      LLD 20.1.8 (compatible with GNU linkers)
   -
     kind: "try_compile-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k"
-      binary: "C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k"
+      source: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb"
+      binary: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb"
     cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/data/data/com.termux/files/usr/bin/clang-scan-deps"
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
@@ -357,287 +893,228 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k'
+        Change Dir: '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb'
         
-        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_df026/fast
-        C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_df026.dir\\build.make CMakeFiles/cmTC_df026.dir/build
-        mingw32-make[1]: Entering directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k'
-        Building CXX object CMakeFiles/cmTC_df026.dir/CMakeCXXCompilerABI.cpp.obj
-        C:\\msys64\\ucrt64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
-        Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\g++.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_0b851/fast
+        /data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_0b851.dir/build.make CMakeFiles/cmTC_0b851.dir/build
+        make[1]: Entering directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb'
+        Building CXX object CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o
+        /data/data/com.termux/files/usr/bin/c++   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        clang version 20.1.8
+        Target: aarch64-unknown-linux-android24
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.2.0 (Rev3, Built by MSYS2 project) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_df026.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\USER\\AppData\\Local\\Temp\\ccPjFCYb.s
-        GNU C++17 (Rev3, Built by MSYS2 project) version 13.2.0 (x86_64-w64-mingw32)
-        	compiled by GNU C version 13.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
-        
-        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-        ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"
-        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
-        ignoring nonexistent directory "/ucrt64/include"
-        ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
-        ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"
-        ignoring nonexistent directory "D:/a/msys64/ucrt64/include"
+        InstalledDir: /data/data/com.termux/files/usr/bin
+         (in-process)
+         "/data/data/com.termux/files/usr/bin/clang-20" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb -v -fcoverage-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb -resource-dir /data/data/com.termux/files/usr/lib/clang/20 -dependency-file CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files/usr/bin/../.. -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/include/c++/v1 -internal-isystem /data/data/com.termux/files/usr/lib/clang/20/include -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include -O2 -fdeprecated-macro -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -x c++ /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 20.1.8 based upon LLVM 20.1.8 default target aarch64-unknown-linux-android24
+        ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../usr/local/include"
+        ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../include"
         #include "..." search starts here:
         #include <...> search starts here:
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed
+         /data/data/com.termux/files/usr/bin/../../usr/include/c++/v1
+         /data/data/com.termux/files/usr/lib/clang/20/include
+         /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android
+         /data/data/com.termux/files/usr/bin/../../usr/include
         End of search list.
-        Compiler executable checksum: 59751455f22cacecb64fc812dccb7f1d
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\USER\\AppData\\Local\\Temp\\ccPjFCYb.s
-        GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_df026.exe
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_df026.dir\\link.txt --verbose=1
-        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_df026.dir/objects.a
-        C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_df026.dir/objects.a @CMakeFiles\\cmTC_df026.dir\\objects1.rsp
-        C:\\msys64\\ucrt64\\bin\\g++.exe  -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_df026.dir/objects.a -Wl,--no-whole-archive -o cmTC_df026.exe -Wl,--out-implib,libcmTC_df026.dll.a -Wl,--major-image-version,0,--minor-image-version,0
-        Using built-in specs.
-        COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\g++.exe
-        COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe
-        Target: x86_64-w64-mingw32
-        Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++
+        Linking CXX executable cmTC_0b851
+        /data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b851.dir/link.txt --verbose=1
+        clang version 20.1.8
+        Target: aarch64-unknown-linux-android24
         Thread model: posix
-        Supported LTO compression algorithms: zlib zstd
-        gcc version 13.2.0 (Rev3, Built by MSYS2 project) 
-        COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/
-        LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/;C:/msys64/ucrt64/bin/../lib/gcc/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_df026.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_df026.'
-         C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccaEKm35.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_df026.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_df026.dir/objects.a --no-whole-archive --out-implib libcmTC_df026.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
-        collect2 version 13.2.0
-        C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccaEKm35.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_df026.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_df026.dir/objects.a --no-whole-archive --out-implib libcmTC_df026.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o
-        GNU ld (GNU Binutils) 2.41
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_df026.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_df026.'
-        mingw32-make[1]: Leaving directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k'
+        InstalledDir: /data/data/com.termux/files/usr/bin
+         "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files/usr/bin/../.. -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --no-rosegment --hash-style=gnu -rpath=/data/data/com.termux/files/usr/bin/../../usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_0b851 /data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/bin/../../usr/lib -L/system/lib64 CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -lc++_shared /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lm -lc /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o
+        /data/data/com.termux/files/usr/bin/c++ -O2 -g -DNDEBUG  -v CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_0b851
+        make[1]: Leaving directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include]
-          add: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+          add: [/data/data/com.termux/files/usr/bin/../../usr/include/c++/v1]
+          add: [/data/data/com.termux/files/usr/lib/clang/20/include]
+          add: [/data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android]
+          add: [/data/data/com.termux/files/usr/bin/../../usr/include]
         end of search list found
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0] ==> [C:/msys64/ucrt64/include/c++/13.2.0]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32] ==> [C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward] ==> [C:/msys64/ucrt64/include/c++/13.2.0/backward]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include] ==> [C:/msys64/ucrt64/include]
-        collapse include dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
-        implicit include dirs: [C:/msys64/ucrt64/include/c++/13.2.0;C:/msys64/ucrt64/include/c++/13.2.0/x86_64-w64-mingw32;C:/msys64/ucrt64/include/c++/13.2.0/backward;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include;C:/msys64/ucrt64/include;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        collapse include dir [/data/data/com.termux/files/usr/bin/../../usr/include/c++/v1] ==> [/data/data/com.termux/files/usr/include/c++/v1]
+        collapse include dir [/data/data/com.termux/files/usr/lib/clang/20/include] ==> [/data/data/com.termux/files/usr/lib/clang/20/include]
+        collapse include dir [/data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android] ==> [/data/data/com.termux/files/usr/include/aarch64-linux-android]
+        collapse include dir [/data/data/com.termux/files/usr/bin/../../usr/include] ==> [/data/data/com.termux/files/usr/include]
+        implicit include dirs: [/data/data/com.termux/files/usr/include/c++/v1;/data/data/com.termux/files/usr/lib/clang/20/include;/data/data/com.termux/files/usr/include/aarch64-linux-android;/data/data/com.termux/files/usr/include]
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k']
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb']
         ignore line: []
-        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/ucrt64/bin/mingw32-make.exe -f Makefile cmTC_df026/fast]
-        ignore line: [C:/msys64/ucrt64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_df026.dir\\build.make CMakeFiles/cmTC_df026.dir/build]
-        ignore line: [mingw32-make[1]: Entering directory 'C:/Users/USER/Desktop/cHRISTiSmYpERSONALsAVIOUR/build/CMakeFiles/CMakeScratch/TryCompile-c3nk0k']
-        ignore line: [Building CXX object CMakeFiles/cmTC_df026.dir/CMakeCXXCompilerABI.cpp.obj]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\g++.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Run Build Command(s): /data/data/com.termux/files/usr/bin/cmake -E env VERBOSE=1 /data/data/com.termux/files/usr/bin/make -f Makefile cmTC_0b851/fast]
+        ignore line: [/data/data/com.termux/files/usr/bin/make  -f CMakeFiles/cmTC_0b851.dir/build.make CMakeFiles/cmTC_0b851.dir/build]
+        ignore line: [make[1]: Entering directory '/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb']
+        ignore line: [Building CXX object CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/data/data/com.termux/files/usr/bin/c++   -O2 -g -DNDEBUG   -v -MD -MT CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -c /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang version 20.1.8]
+        ignore line: [Target: aarch64-unknown-linux-android24]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.2.0 (Rev3  Built by MSYS2 project) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/cc1plus.exe -quiet -v -iprefix C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/ -D_REENTRANT C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles\\cmTC_df026.dir\\ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=nocona -version -o C:\\Users\\USER\\AppData\\Local\\Temp\\ccPjFCYb.s]
-        ignore line: [GNU C++17 (Rev3  Built by MSYS2 project) version 13.2.0 (x86_64-w64-mingw32)]
-        ignore line: [	compiled by GNU C version 13.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
-        ignore line: []
-        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include"]
-        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
-        ignore line: [ignoring nonexistent directory "/ucrt64/include"]
-        ignore line: [ignoring duplicate directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"]
-        ignore line: [ignoring nonexistent directory "C:/msys64/ucrt64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/include"]
-        ignore line: [ignoring nonexistent directory "D:/a/msys64/ucrt64/include"]
+        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/data/data/com.termux/files/usr/bin/clang-20" -cc1 -triple aarch64-unknown-linux-android24 -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +v8a -target-feature +fp-armv8 -target-feature +neon -target-feature +fix-cortex-a53-835769 -target-abi aapcs -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb -v -fcoverage-compilation-dir=/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/CMakeScratch/TryCompile-ZLYysb -resource-dir /data/data/com.termux/files/usr/lib/clang/20 -dependency-file CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D NDEBUG -isysroot /data/data/com.termux/files/usr/bin/../.. -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/include/c++/v1 -internal-isystem /data/data/com.termux/files/usr/lib/clang/20/include -internal-isystem /data/data/com.termux/files/usr/bin/../../usr/local/include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../include -internal-externc-isystem /data/data/com.termux/files/usr/bin/../../usr/include -O2 -fdeprecated-macro -ferror-limit 19 -femulated-tls -fno-signed-char -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -x c++ /data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 20.1.8 based upon LLVM 20.1.8 default target aarch64-unknown-linux-android24]
+        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/data/data/com.termux/files/usr/bin/../../include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/x86_64-w64-mingw32]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include/c++/13.2.0/backward]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../include]
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed]
+        ignore line: [ /data/data/com.termux/files/usr/bin/../../usr/include/c++/v1]
+        ignore line: [ /data/data/com.termux/files/usr/lib/clang/20/include]
+        ignore line: [ /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android]
+        ignore line: [ /data/data/com.termux/files/usr/bin/../../usr/include]
         ignore line: [End of search list.]
-        ignore line: [Compiler executable checksum: 59751455f22cacecb64fc812dccb7f1d]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\']
-        ignore line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\USER\\AppData\\Local\\Temp\\ccPjFCYb.s]
-        ignore line: [GNU assembler version 2.41 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.41]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'CMakeFiles\\cmTC_df026.dir\\CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_df026.exe]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_df026.dir\\link.txt --verbose=1]
-        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_df026.dir/objects.a]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\ar.exe qc CMakeFiles\\cmTC_df026.dir/objects.a @CMakeFiles\\cmTC_df026.dir\\objects1.rsp]
-        ignore line: [C:\\msys64\\ucrt64\\bin\\g++.exe  -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_df026.dir/objects.a -Wl --no-whole-archive -o cmTC_df026.exe -Wl --out-implib libcmTC_df026.dll.a -Wl --major-image-version 0 --minor-image-version 0]
-        ignore line: [Using built-in specs.]
-        ignore line: [COLLECT_GCC=C:\\msys64\\ucrt64\\bin\\g++.exe]
-        ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe]
-        ignore line: [Target: x86_64-w64-mingw32]
-        ignore line: [Configured with: ../gcc-13.2.0/configure --prefix=/ucrt64 --with-local-prefix=/ucrt64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --with-native-system-header-dir=/ucrt64/include --libexecdir=/ucrt64/lib --enable-bootstrap --enable-checking=release --with-arch=nocona --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch --enable-lto --enable-libgomp --disable-libssp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/ucrt64 --with-mpfr=/ucrt64 --with-mpc=/ucrt64 --with-isl=/ucrt64 --with-pkgversion='Rev3, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld --disable-libstdcxx-debug --with-boot-ldflags=-static-libstdc++ --with-stage1-ldflags=-static-libstdc++]
+        ignore line: [Linking CXX executable cmTC_0b851]
+        ignore line: [/data/data/com.termux/files/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b851.dir/link.txt --verbose=1]
+        ignore line: [clang version 20.1.8]
+        ignore line: [Target: aarch64-unknown-linux-android24]
         ignore line: [Thread model: posix]
-        ignore line: [Supported LTO compression algorithms: zlib zstd]
-        ignore line: [gcc version 13.2.0 (Rev3  Built by MSYS2 project) ]
-        ignore line: [COMPILER_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/]
-        ignore line: [LIBRARY_PATH=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_df026.exe' '-shared-libgcc' '-mtune=generic' '-march=nocona' '-dumpdir' 'cmTC_df026.']
-        link line: [ C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccaEKm35.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_df026.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_df026.dir/objects.a --no-whole-archive --out-implib libcmTC_df026.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/collect2.exe] ==> ignore
-          arg [-plugin] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll] ==> ignore
-          arg [-plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe] ==> ignore
-          arg [-plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccaEKm35.res] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
-          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
-          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
-          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
-          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
-          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+        ignore line: [InstalledDir: /data/data/com.termux/files/usr/bin]
+        link line: [ "/data/data/com.termux/files/usr/bin/ld.lld" --sysroot=/data/data/com.termux/files/usr/bin/../.. -EL --fix-cortex-a53-843419 -z now -z relro -z max-page-size=16384 --no-rosegment --hash-style=gnu -rpath=/data/data/com.termux/files/usr/bin/../../usr/lib --eh-frame-hdr -m aarch64linux -pie -dynamic-linker /system/bin/linker64 -o cmTC_0b851 /data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o -L/data/data/com.termux/files/usr/bin/../../usr/lib -L/system/lib64 CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o -lc++_shared /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lm -lc /data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o]
+          arg [/data/data/com.termux/files/usr/bin/ld.lld] ==> ignore
+          arg [--sysroot=/data/data/com.termux/files/usr/bin/../..] ==> ignore
+          arg [-EL] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=16384] ==> ignore
+          arg [--no-rosegment] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-rpath=/data/data/com.termux/files/usr/bin/../../usr/lib] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
           arg [-m] ==> ignore
-          arg [i386pep] ==> ignore
-          arg [-Bdynamic] ==> search dynamic
+          arg [aarch64linux] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_df026.exe] ==> ignore
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib]
-          arg [-LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..]
-          arg [-v] ==> ignore
-          arg [--whole-archive] ==> ignore
-          arg [CMakeFiles\\cmTC_df026.dir/objects.a] ==> ignore
-          arg [--no-whole-archive] ==> ignore
-          arg [--out-implib] ==> ignore
-          arg [libcmTC_df026.dll.a] ==> ignore
-          arg [--major-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [--minor-image-version] ==> ignore
-          arg [0] ==> ignore
-          arg [-lstdc++] ==> lib [stdc++]
-          arg [-lmingw32] ==> lib [mingw32]
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lmoldname] ==> lib [moldname]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lpthread] ==> lib [pthread]
-          arg [-ladvapi32] ==> lib [advapi32]
-          arg [-lshell32] ==> lib [shell32]
-          arg [-luser32] ==> lib [user32]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [-lmingw32] ==> lib [mingw32]
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lmoldname] ==> lib [moldname]
-          arg [-lmingwex] ==> lib [mingwex]
-          arg [-lmsvcrt] ==> lib [msvcrt]
-          arg [-lkernel32] ==> lib [kernel32]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o]
-          arg [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        ignore line: [collect2 version 13.2.0]
-        ignore line: [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/liblto_plugin.dll -plugin-opt=C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\USER\\AppData\\Local\\Temp\\ccaEKm35.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_df026.exe C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0 -LC:/msys64/ucrt64/bin/../lib/gcc -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../.. -v --whole-archive CMakeFiles\\cmTC_df026.dir/objects.a --no-whole-archive --out-implib libcmTC_df026.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        linker tool for 'CXX': C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe
-        remove lib [msvcrt]
-        remove lib [msvcrt]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/crt2.o] ==> [C:/msys64/ucrt64/lib/crt2.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib/default-manifest.o] ==> [C:/msys64/ucrt64/lib/default-manifest.o]
-        collapse obj [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0] ==> [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc] ==> [C:/msys64/ucrt64/lib/gcc]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../lib] ==> [C:/msys64/ucrt64/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/lib] ==> [C:/msys64/ucrt64/x86_64-w64-mingw32/lib]
-        collapse library dir [C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../..] ==> [C:/msys64/ucrt64/lib]
-        implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex;kernel32]
-        implicit objs: [C:/msys64/ucrt64/lib/crt2.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtbegin.o;C:/msys64/ucrt64/lib/default-manifest.o;C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/crtend.o]
-        implicit dirs: [C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0;C:/msys64/ucrt64/lib/gcc;C:/msys64/ucrt64/x86_64-w64-mingw32/lib;C:/msys64/ucrt64/lib]
+          arg [cmTC_0b851] ==> ignore
+          arg [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o] ==> obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o]
+          arg [-L/data/data/com.termux/files/usr/bin/../../usr/lib] ==> dir [/data/data/com.termux/files/usr/bin/../../usr/lib]
+          arg [-L/system/lib64] ==> dir [/system/lib64]
+          arg [CMakeFiles/cmTC_0b851.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lc++_shared] ==> lib [c++_shared]
+          arg [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lm] ==> lib [m]
+          arg [-lc] ==> lib [c]
+          arg [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o] ==> obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o]
+        linker tool for 'CXX': /data/data/com.termux/files/usr/bin/ld.lld
+        remove lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        remove lib [/data/data/com.termux/files/usr/lib/clang/20/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        collapse obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtbegin_dynamic.o] ==> [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o]
+        collapse obj [/data/data/com.termux/files/usr/bin/../../usr/lib/crtend_android.o] ==> [/data/data/com.termux/files/usr/lib/crtend_android.o]
+        collapse library dir [/data/data/com.termux/files/usr/bin/../../usr/lib] ==> [/data/data/com.termux/files/usr/lib]
+        collapse library dir [/system/lib64] ==> [/system/lib64]
+        implicit libs: [c++_shared;-l:libunwind.a;dl;m;c;-l:libunwind.a;dl]
+        implicit objs: [/data/data/com.termux/files/usr/lib/crtbegin_dynamic.o;/data/data/com.termux/files/usr/lib/crtend_android.o]
+        implicit dirs: [/data/data/com.termux/files/usr/lib;/system/lib64]
         implicit fwks: []
       
       
   -
     kind: "message-v1"
     backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
-      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/data/data/com.termux/files/usr/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
-      Running the CXX compiler's linker: "C:/msys64/ucrt64/x86_64-w64-mingw32/bin/ld.exe" "-v"
-      GNU ld (GNU Binutils) 2.41
+      Running the CXX compiler's linker: "/data/data/com.termux/files/usr/bin/ld.lld" "-v"
+      LLD 20.1.8 (compatible with GNU linkers)
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:30 (find_package)"
+    name: "GLESv2"
+    configs:
+      -
+        filename: "GLESv2Config.cmake"
+        kind: "cmake"
+      -
+        filename: "glesv2-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "GLESv2"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/pkgRedirects/GLESv2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/data/data/com.termux/files/home/Chemical-engineering-simulator/openglTeach/build/CMakeFiles/pkgRedirects/glesv2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/data/data/com.termux/files/usr/GLESv2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/data/data/com.termux/files/usr/glesv2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/GLESv2Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/glesv2-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/data/data/com.termux/files/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/data/data/com.termux/files/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
 ...

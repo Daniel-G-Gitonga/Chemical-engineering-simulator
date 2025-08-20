@@ -1,6 +1,7 @@
 #include <iostream>
-
-
+#include <string>
+#include <sstream>
+#include <fstream>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -12,515 +13,563 @@
 #define STB_IMAGE_IMPLEMENTATION
    #include "stb_image.h"
 
-const char* fragmentShaderSourceLight = R"(
-#version 330 core
-out vec4 FragColor;
+//#include "shader.h"
 
-in vec3 normals_o;
-
-uniform vec3 lightColour;
-
-void main(){
-FragColor = vec4(lightColour , 1.0f);//vec4(1.0,1.0,1.0,1.0);
-}
-)";
-
-const char* fragmentShaderSourcePyramid = R"(
-#version 330 core
-out vec4 FragColor;
-
-in vec2 texture_coords;
-in vec3 normals_o;
-
-uniform vec3 lightColour;
-uniform vec3 objColour;
-
-uniform sampler2D text;
-void main(){
-FragColor = texture(text, texture_coords) * (lightColour),1.0f;// * vec4((objColour) * (lightColour),1.0f); //texture(text, texture_coords) ;//* vec4(1.0,1.0,0.0,1.0);
-}
-)";
-
-const char* vertexShaderSourceLight = R"(
-#version 330 core
-
-layout (location = 0) in vec3 pos;
-layout (location = 1) in vec3 normals;
-layout (location = 2) in vec2 textCoords;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-out vec3 normals_o;
-
-void main(){
-
-normals_o = normals;
-gl_Position =  projection * view * model * vec4(pos,1.0);
-}
-)";
-
-
-const char* vertexShaderSourcePyramid = R"(
-#version 330 core
-
-layout (location = 0) in vec3 pos;
-layout (location = 1) in vec3 normals;
-layout (location = 2) in vec2 textCoords;
-
-uniform mat4 model;
-uniform mat4 view;
-uniform mat4 projection;
-
-out vec2 texture_coords;
-out vec3 normals_o;
-
-void main(){
-texture_coords = textCoords;
-normals_o = normals;
-gl_Position = projection * view * model * vec4(pos,1.0);
-}
-)";
-
-
-GLuint VAOl,VAOp,VBOp,VBOl;
-glm::vec3 cameraPos = glm::vec3(0.0f,1.5f,5.0f);
-glm::vec3 cameraLookForward = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 worldUp   = glm::vec3(0.0f,1.0f,0.0f);
-float yaw   = -90.0f;   // initialize facing toward -Z
+float yaw = -90.0f;
 float pitch = 0.0f;
+float lastx = 400.0f, lasty = 300.0f;
+bool first_mouse =  true;
+float fov = 45.0f;
 
-float lastX = 400, lastY = 300; // initial mouse position (window center)
-bool firstMouse = true;
+glm::vec3 camPos    = glm::vec3(-2.0f,0.0f,3.0f);
+glm::vec3 camFront  = glm::vec3(2.0f,0.0f,-1.0f);
+glm::vec3 camUp     = glm::vec3(0.0f,0.0f,1.0f);
 
-float deltaTime = 0.0f; // time between frames, update outside processInput
-float lastFrame = 0.0f;
-
-float mouseSensitivity = 0.1f;
-float cameraSpeed = 2.5f; // adjust as needed
-
-
-GLuint pyramid(){
-    GLuint pyramidProgram, vertexShaderPyramid,fragmentShaderPyramid;
-
-
-    float pyramidVertices[] = {
-    // --- Base (Y = 0), normal pointing down (0, -1, 0) ---
-
-    // Triangle 1
-    -1.0f, 0.0f, -1.0f,   0.0f, -1.0f, 0.0f,   0.0f, 0.0f,  // v0
-     1.0f, 0.0f, -1.0f,   0.0f, -1.0f, 0.0f,   1.0f, 0.0f,  // v1
-     1.0f, 0.0f,  1.0f,   0.0f, -1.0f, 0.0f,   1.0f, 1.0f,  // v2
-
-    // Triangle 2
-    -1.0f, 0.0f, -1.0f,   0.0f, -1.0f, 0.0f,   0.0f, 0.0f,  // v0
-     1.0f, 0.0f,  1.0f,   0.0f, -1.0f, 0.0f,   1.0f, 1.0f,  // v2
-    -1.0f, 0.0f,  1.0f,   0.0f, -1.0f, 0.0f,   0.0f, 1.0f,  // v3
-
-    // --- Side 1 (Front) ---
-    -1.0f, 0.0f, -1.0f,  -0.707f, 0.5f, -0.5f,   0.0f, 0.0f,  // base left
-     0.0f, 2.0f,  0.0f,  -0.707f, 0.5f, -0.5f,   0.5f, 1.0f,  // tip
-     1.0f, 0.0f, -1.0f,   0.707f, 0.5f, -0.5f,   1.0f, 0.0f,  // base right
-
-    // --- Side 2 (Right) ---
-     1.0f, 0.0f, -1.0f,   0.707f, 0.5f, -0.5f,   0.0f, 0.0f,
-     0.0f, 2.0f,  0.0f,   0.707f, 0.5f,  0.5f,   0.5f, 1.0f,
-     1.0f, 0.0f,  1.0f,   0.707f, 0.5f,  0.5f,   1.0f, 0.0f,
-
-    // --- Side 3 (Back) ---
-     1.0f, 0.0f,  1.0f,   0.707f, 0.5f, 0.5f,    0.0f, 0.0f,
-     0.0f, 2.0f,  0.0f,   0.0f,   0.5f, 1.0f,    0.5f, 1.0f,
-    -1.0f, 0.0f,  1.0f,  -0.707f, 0.5f, 0.5f,    1.0f, 0.0f,
-
-    // --- Side 4 (Left) ---
-    -1.0f, 0.0f,  1.0f,  -0.707f, 0.5f, 0.5f,    0.0f, 0.0f,
-     0.0f, 2.0f,  0.0f,  -0.707f, 0.5f, -0.5f,   0.5f, 1.0f,
-    -1.0f, 0.0f, -1.0f,  -0.707f, 0.5f, -0.5f,   1.0f, 0.0f,
-};
-
-
-    
-
-    glGenVertexArrays(1, &VAOp);
-    glBindVertexArray(VAOp);
-    glGenBuffers(1, &VBOp);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOp);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(pyramidVertices), pyramidVertices, GL_STATIC_DRAW);
-
-    vertexShaderPyramid = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShaderPyramid,1, &vertexShaderSourcePyramid, NULL);
-    glCompileShader(vertexShaderPyramid);
-
-{
-    GLint success;
-    char infolog[512];
-    glGetShaderiv(vertexShaderPyramid, GL_COMPILE_STATUS, &success);
-    if(!success){
-        glGetShaderInfoLog(vertexShaderPyramid,512, NULL, infolog);
-        std::cout<<"FAILED TO COMPILE pyramid vertex ::"<<infolog<<std::endl;
-    }
-}
-    
-    fragmentShaderPyramid  =  glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShaderPyramid, 1, &fragmentShaderSourcePyramid, NULL);
-    glCompileShader(fragmentShaderPyramid);
-
-{
-    GLint success;
-    char infolog[512];
-    glGetShaderiv(fragmentShaderPyramid, GL_COMPILE_STATUS, &success);
-    if(!success){
-        glGetShaderInfoLog(fragmentShaderPyramid,512, NULL, infolog);
-        std::cout<<"FAILED TO COMPILE pyramiid fragment "<<infolog<<std::endl;
-    }
-}
-    pyramidProgram      = glCreateProgram();
-    glAttachShader(pyramidProgram, vertexShaderPyramid);
-    glAttachShader(pyramidProgram, fragmentShaderPyramid);
-    glLinkProgram(pyramidProgram);
-{
-    GLint success;
-    char infolog[512];
-    glGetProgramiv(pyramidProgram, GL_LINK_STATUS, &success);
-    if(!success){
-        glGetProgramInfoLog(pyramidProgram,512, NULL, infolog);
-        std::cout<<"FAILED TO LINK pyramid program"<<infolog<<std::endl;
-    }
-}
-
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,8 * sizeof(float), (void*)(0));
-
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,8 * sizeof(float), (void*)(3 * sizeof(float)));
-
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-
-    
-    glBindVertexArray(0);
-    return pyramidProgram;
-}
-GLuint light(){
-GLuint lightProgram, vertexShaderlight, fragmentShaderLight;
-float cubeVertices[] = {
-    // --- Front face (+Z) ---
-    2.0f, 3.0f, 0.5f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,
-    3.0f, 3.0f, 0.5f,   0.0f, 0.0f, 1.0f,   1.0f, 0.0f,
-    3.0f, 4.0f, 0.5f,   0.0f, 0.0f, 1.0f,   1.0f, 1.0f,
-    
-    2.0f, 3.0f, 0.5f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,
-    3.0f, 4.0f, 0.5f,   0.0f, 0.0f, 1.0f,   1.0f, 1.0f,
-    2.0f, 4.0f, 0.5f,   0.0f, 0.0f, 1.0f,   0.0f, 1.0f,
-
-    // --- Back face (-Z) ---
-    3.0f, 3.0f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 0.0f,
-    2.0f, 3.0f, -0.5f,   0.0f, 0.0f, -1.0f,   1.0f, 0.0f,
-    2.0f, 4.0f, -0.5f,   0.0f, 0.0f, -1.0f,   1.0f, 1.0f,
-
-    3.0f, 3.0f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 0.0f,
-    2.0f, 4.0f, -0.5f,   0.0f, 0.0f, -1.0f,   1.0f, 1.0f,
-    3.0f, 4.0f, -0.5f,   0.0f, 0.0f, -1.0f,   0.0f, 1.0f,
-
-    // --- Left face (-X) ---
-    2.0f, 3.0f, -0.5f,  -1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
-    2.0f, 3.0f,  0.5f,  -1.0f, 0.0f, 0.0f,   1.0f, 0.0f,
-    2.0f, 4.0f,  0.5f,  -1.0f, 0.0f, 0.0f,   1.0f, 1.0f,
-
-    2.0f, 3.0f, -0.5f,  -1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
-    2.0f, 4.0f,  0.5f,  -1.0f, 0.0f, 0.0f,   1.0f, 1.0f,
-    2.0f, 4.0f, -0.5f,  -1.0f, 0.0f, 0.0f,   0.0f, 1.0f,
-
-    // --- Right face (+X) ---
-    3.0f, 3.0f,  0.5f,   1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 3.0f, -0.5f,   1.0f, 0.0f, 0.0f,   1.0f, 0.0f,
-    3.0f, 4.0f, -0.5f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,
-
-    3.0f, 3.0f,  0.5f,   1.0f, 0.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 4.0f, -0.5f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,
-    3.0f, 4.0f,  0.5f,   1.0f, 0.0f, 0.0f,   0.0f, 1.0f,
-
-    // --- Top face (+Y) ---
-    2.0f, 4.0f,  0.5f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 4.0f,  0.5f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,
-    3.0f, 4.0f, -0.5f,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f,
-
-    2.0f, 4.0f,  0.5f,   0.0f, 1.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 4.0f, -0.5f,   0.0f, 1.0f, 0.0f,   1.0f, 1.0f,
-    2.0f, 4.0f, -0.5f,   0.0f, 1.0f, 0.0f,   0.0f, 1.0f,
-
-    // --- Bottom face (-Y) ---
-    2.0f, 3.0f, -0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 3.0f, -0.5f,   0.0f, -1.0f, 0.0f,   1.0f, 0.0f,
-    3.0f, 3.0f,  0.5f,   0.0f, -1.0f, 0.0f,   1.0f, 1.0f,
-
-    2.0f, 3.0f, -0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 0.0f,
-    3.0f, 3.0f,  0.5f,   0.0f, -1.0f, 0.0f,   1.0f, 1.0f,
-    2.0f, 3.0f,  0.5f,   0.0f, -1.0f, 0.0f,   0.0f, 1.0f
-};
-
-    
-    glGenVertexArrays(1, &VAOl);
-    glBindVertexArray(VAOl);
-    glGenBuffers(1, &VBOl);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOl);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-
-    vertexShaderlight = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShaderlight,1, &vertexShaderSourceLight, NULL);
-    glCompileShader(vertexShaderlight);
-    {
-    GLint success;
-    char infolog[512];
-    glGetShaderiv(vertexShaderlight, GL_COMPILE_STATUS, &success);
-    if(!success){
-        glGetShaderInfoLog(vertexShaderlight,512, NULL, infolog);
-        std::cout<<"FAILED TO COMPILE light vertex shader:: "<<infolog<<std::endl;
-    }
-}
-
-    fragmentShaderLight  =  glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShaderLight, 1, &fragmentShaderSourceLight, NULL);
-    glCompileShader(fragmentShaderLight);
-    {
-    GLint success;
-    char infolog[512];
-    glGetShaderiv(fragmentShaderLight, GL_COMPILE_STATUS, &success);
-    if(!success){
-        glGetShaderInfoLog(fragmentShaderLight,512, NULL, infolog);
-        std::cout<<"FAILED TO COMPILE light fragment shader:: "<<infolog<<std::endl;
-    }
-}
-    
-    lightProgram      = glCreateProgram();
-    glAttachShader(lightProgram, vertexShaderlight);
-    glAttachShader(lightProgram, fragmentShaderLight);
-    glLinkProgram(lightProgram);
-    {
-    GLint success;
-    char infolog[512];
-    glGetProgramiv(lightProgram, GL_LINK_STATUS, &success);
-    if(!success){
-        glGetProgramInfoLog(lightProgram,512, NULL, infolog);
-        std::cout<<"FAILED TO LINK light program "<<infolog<<std::endl;
-    }
-}
-
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,8 * sizeof(float), (void*)(0));
-
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,8 * sizeof(float), (void*)(3 * sizeof(float)));
-
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-
-    glBindVertexArray(0);
-
-    return lightProgram;
-
-}
-void processInputs(GLFWwindow* window){
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
-        glfwSetWindowShouldClose(window, true);
-    }
+float tri_vertices[] = {
+    -1.0f,-1.0f,0.0f,
+     0.0f,-1.0f,0.0f,
+     0.0f,1.0f,0.0f
+    };
+float cube_vertices[] = {
   
+    // positions           // texture coords
 
-    // Calculate deltaTime
-    float currentFrame = glfwGetTime();
-    deltaTime = currentFrame - lastFrame;
-    lastFrame = currentFrame;
+    // Front face
+    -0.5f, -0.5f,  0.5f,   0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,   1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,   1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,   0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,   0.0f, 0.0f,
 
-    // Keyboard input
-    float velocity = cameraSpeed * deltaTime;
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraPos += velocity * cameraLookForward;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraPos -= velocity * cameraLookForward;
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraPos -= glm::normalize(glm::cross(cameraLookForward, worldUp)) * velocity;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraPos += glm::normalize(glm::cross(cameraLookForward, worldUp)) * velocity;
-    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
-        cameraPos -= glm::normalize(glm::cross(cameraLookForward, glm::normalize(glm::cross(cameraLookForward, worldUp)))) * velocity;
-    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
-        cameraPos += glm::normalize(glm::cross(cameraLookForward, glm::normalize(glm::cross(cameraLookForward, worldUp)))) * velocity;
-    // Mouse input - get current cursor position
-    double xpos, ypos;
-    glfwGetCursorPos(window, &xpos, &ypos);
+    // Back face
+    -0.5f, -0.5f, -0.5f,   1.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,   0.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,   0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,   0.0f, 1.0f,
+    -0.5f,  0.5f, -0.5f,   1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,   1.0f, 0.0f,
 
-    if (firstMouse) // this bool variable is initially true
-    {
-        lastX = xpos;
-        lastY = ypos;
-        firstMouse = false;
-    }
+    // Left face
+    -0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,   1.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,   0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
 
-    float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-    lastX = xpos;
-    lastY = ypos;
+    // Right face
+     0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,   1.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,   0.0f, 0.0f,
 
-    xoffset *= mouseSensitivity;
-    yoffset *= mouseSensitivity;
+    // Bottom face
+    -0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,   1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,   1.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,   1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,   0.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,   0.0f, 1.0f,
 
-    yaw   += xoffset;
-    pitch += yoffset;
+    // Top face
+    -0.5f,  0.5f, -0.5f,   0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,   1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,   1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,   0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,   0.0f, 1.0f
+};
 
-    // constrain the pitch angle to prevent screen flip
-    if(pitch > 89.0f)
-        pitch = 190.0f;
-    if(pitch < -89.0f)
-        pitch = -190.0f;
 
-    // update cameraFront vector
-    glm::vec3 front;
-    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    front.y = sin(glm::radians(pitch));
-    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraLookForward = glm::normalize(front);
+class Shader{
+private:
+    GLuint prog;
+public:
+GLuint VBO,vertexShader,fragmentShader, VAO;
+GLuint index ;
+
+ 
+void error(GLuint program,const char* name_p, GLuint fragmentShader,const char* name_f, GLuint vertexShader,const char* name_v){
+
+int success ;
+char infoLog[512];
+
+glGetShaderiv(fragmentShader,GL_COMPILE_STATUS, &success);
+if(!success){
+    glGetShaderInfoLog(fragmentShader,512,NULL,infoLog);
+    std::cerr<<"Failed to compile fragmentShader for"<<name_f<<" in::"<<infoLog<<std::endl;
+}
+
+glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+if(!success){
+     glGetShaderInfoLog(vertexShader,512,NULL,infoLog);
+     std::cerr<<"failed to compile veetexShader for"<<name_v<<" in::"<<infoLog<<std::endl;
+}
+
+glGetProgramiv(program,GL_LINK_STATUS, &success);
+if(!success){
+     glGetProgramInfoLog(program,512,NULL,infoLog);
+     std::cerr<<"Failed to link the program for "<<name_p<<" in::"<<infoLog<<std::endl;
+}
+
 
 }
-void framebuffer_size_callback(GLFWwindow* window, int width, int height){
-glViewport(0,0,width,height);
-}
-void uniforms (GLuint program, const char* name){
+
+GLuint setUp(const char* name_prog, int size_to,float vertices[],const char* path_vertex, const char* path_fragment){
+   std::string vertexCode;
+   std::string fragmentCode;
+
+   std::ifstream vShaderFile;
+   std::ifstream fShaderFile;
+
+   std::stringstream vShaderStream;
+   std::stringstream fShaderStream;
+
+   vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+   fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
+   try
+   {
+      vShaderFile.open(path_vertex);
+      fShaderFile.open(path_fragment);
+
+      vShaderStream << vShaderFile.rdbuf();
+      fShaderStream << fShaderFile.rdbuf();
+
+      vShaderFile.close();
+      fShaderFile.close();   
+
+      vertexCode = vShaderStream.str();
+      fragmentCode = fShaderStream.str();
+
+   }
+   catch(std::ifstream::failure& e)
+   {
+    std::cerr<<"FILE NOT SUCCESSFULLY READ  "<< e.what()<<std::endl;
+   }
+   
+    const char* fragmentShaderSource = fragmentCode.c_str();
+    const char* vertexShaderSource   = vertexCode.c_str();
+
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
+    glGenBuffers(1,&VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    //glBufferData(GL_ARRAY_BUFFER, sizeof(&vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, size_to * sizeof(float), vertices, GL_STATIC_DRAW); 
+
+    vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader,1,&vertexShaderSource,NULL);
+    glCompileShader(vertexShader);
+
+    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader,1,&fragmentShaderSource,NULL);
+    glCompileShader(fragmentShader);
+
+    prog = glCreateProgram();
+    glAttachShader(prog, vertexShader);
+    glAttachShader(prog, fragmentShader);
+    glLinkProgram(prog);
     
+     error(prog,name_prog,fragmentShader,name_prog,vertexShader,name_prog);
 
-     glm::mat4 model = glm::mat4(1.0f);
-     model = glm::translate(model, glm::vec3(1.0));
-     glm::mat4 view = glm::mat4(1.0f);
-     view = glm::lookAt(cameraPos, cameraPos + cameraLookForward , worldUp);
-     glm::mat4 projection = glm::mat4(1.0f);
-     projection = glm::perspective(glm::radians(45.0f),800.0f/600.0f,0.1f,100.0f);
-    // projection  = glm::ortho(0.0f,800.0f,0.0f,600.0f,0.1f,100.0f);
+     return prog;
+  }
 
-glm::mat4 holder = glm::mat4(1.0f);
+  void uniform( const char* uniformName, GLuint program, glm::vec4 value){
+    index = glGetUniformLocation(program, uniformName);
+    glUniform4fv(index, 1,glm::value_ptr(value));
+  }
+  void uniform(const char* uniformName, GLuint program, glm::mat4 value){
+    index = glGetUniformLocation(program, uniformName);
+    glUniformMatrix4fv(index, 1, GL_FALSE ,glm::value_ptr(value));
+  }
+  void uniform(const char* uniformName, GLuint program, GLenum i){
+   int indices = 0;
 
-     GLuint loc = glGetUniformLocation(program, name);
-     if(name == "model"){
-      holder = model;
-     }else if(name == "view"){
-      holder = view;
-     }else if(name == "projection"){
-      holder = projection;
-     }
-     glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(holder));
+   index = glGetUniformLocation(program, uniformName);
+   glUniform1i(index, indices);
+  }
+
+void clean(){
+glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+    glDeleteBuffers(1, &VBO);
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteProgram(prog);
+}
+~Shader(){
+    
+    clean();
+}
+
+};
+class Texture : public Shader{
+public:
+GLuint texture, program;
+const char* path ;
+const char* uniformName;
+GLenum text_unit;
+
+
+Texture(const char* path_c, const char* uniformName_c, GLenum text_unit_c){
+path = path_c;
+uniformName = uniformName_c;
+text_unit   = text_unit_c;
+
 
 }
-void setLight(GLuint program){
-    glUseProgram(program);
-    glUniform3f(glGetUniformLocation(program, "lightColour"),1.0f,1.0f,1.0f);
-    uniforms(program,"model");
-    uniforms(program,"view");
-    uniforms(program,"projection");
-glBindVertexArray(VAOl);
-glDrawArrays(GL_TRIANGLES, 0, 36);
-glBindVertexArray(0);
 
-}
-void setPyramid(GLuint program){
-    glUseProgram(program);
-    glUniform3f(glGetUniformLocation(program, "objColour"),0.50f,0.50f,0.0f);
-    glUniform3f(glGetUniformLocation(program, "lightColour"),1.0f,1.0f,1.0f);
-    glUniform1i(glGetUniformLocation(program, "text"), 0);
-    uniforms(program,"model");
-    uniforms(program,"view");
-    uniforms(program,"projection");
-glBindVertexArray(VAOp);
-glDrawArrays(GL_TRIANGLES, 0, 18);
-glBindVertexArray(0);
-
-}
-void load_texture(const char* path){
-
+void textureUse(GLuint program){
 stbi_set_flip_vertically_on_load(true);
 
-
 int width, height, nrChannels;
-unsigned char* bytes = stbi_load(path, &width, &height, &nrChannels, 0);
-if(bytes == NULL){
-std::cout<<"FAILED TO LOAD THE IMAGE..."<<std::endl;
-}
-GLuint texture;
-glGenTextures(1,&texture);
-glActiveTexture(GL_TEXTURE0);
+unsigned char* byte = stbi_load(path, &width, &height, &nrChannels, 0);
+
+
+glActiveTexture(text_unit);
+
+glGenTextures(1, &texture);
 glBindTexture(GL_TEXTURE_2D, texture);
 
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-GLenum format = GL_RGBA;
-if(nrChannels == 3){
-    format = GL_RGB;
-}else if(nrChannels != 4 && nrChannels != 3){
-     format = GL_RED ;
+
+if(byte){
+
+GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB ;
+glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, byte);
+
+uniform(uniformName , program, text_unit);
+}else{std::cout<<"failed to load the texture..."<< path <<std::endl;}
+stbi_image_free(byte);
+
+
 }
 
-glTexImage2D(GL_TEXTURE_2D,0,format,width,height,0,format,GL_UNSIGNED_BYTE,bytes);
+~Texture(){
+glDeleteTextures(1, &texture);
+}
+};
+class Triangle : public Texture{
 
-stbi_image_free(bytes);
+  public:
+
+  GLuint tri_program;
+  Triangle(const char* path, const char* uniformtexture, GLenum t_u) : Texture(path, uniformtexture, t_u) {
+
+    float *vv = tri_vertices;
+    
+    tri_program = setUp("triangle_program...",9, tri_vertices,"../src/vst.glsl","../src/fst.glsl");
+
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3*sizeof(float),(void*)(0));
+    glBindVertexArray(0);    
+  }
+
+};
+class Cube : public Texture{
+public:
+float *cc = cube_vertices;
+GLuint cube_program ;
+glm::mat4 model;
+glm::mat4 view;
+glm::mat4 projection;
+
+
+Cube(const char* path, const char* uniformtexture, GLenum t_u) : Texture(path, uniformtexture, t_u) {
+
+/*
+nothing to see here just passing arguments from one constructor to another( from Cube class to texture class....)
+*/
+
+cube_program= setUp("cube",180,cube_vertices,"../src/vsc.glsl","../src/fsc.glsl");
+
+glEnableVertexAttribArray(0);
+glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,5*sizeof(float),(void*)(0));
+
+glEnableVertexAttribArray(1);
+glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,5*sizeof(float),(void*)(3*sizeof(float)));
+glBindVertexArray(0);
+
+
 }
 
 
-int main(){
+void cubeUniform(glm::mat4 pos, glm::mat4 model, glm::mat4 view, glm::mat4 projection, glm::vec4 color){
+    uniform("ccolor"    , cube_program,                            color);
+    uniform("model_pos"     , cube_program,                           pos);
+    uniform("model"     , cube_program,                           model);
+    uniform("view"      , cube_program,                            view);
+    uniform("projection", cube_program,                      projection);
+   }
 
-    glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-     GLFWwindow* window = glfwCreateWindow(800 , 600, "lighting", NULL, NULL);
-     if(!window){
-       std::cerr<<"failed to create the window..."<<std::endl;
+};
+class Events{
+    public:
+GLFWwindow* win;
+Events(GLFWwindow* window){
+    win = window;
+}
+void ev(){
 
-     }
-     glfwMakeContextCurrent(window);
+    const float camSpeed = 0.21115f;
 
-     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        std::cerr<<"Faile to load glad..."<<std::endl;
-     }
-   
+    if(glfwGetKey(win,GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    {
+        glfwSetWindowShouldClose(win, true);        
+    }
 
-     glViewport(0,0,800,600);
-     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-     GLFW_CURSOR_DISABLED;
-     /////
-GLuint pyramidProgram = pyramid();
-GLuint lightProgram   = light();
-     ///
-      load_texture("../assets/textures/ai.jpg");
-      
-     glEnable(GL_DEPTH_TEST);
+    if(glfwGetKey(win, GLFW_KEY_D) == GLFW_PRESS)
+    {//camPos == camFront
+        camPos += glm::normalize(glm::cross(camUp, camFront)) * camSpeed;
+    }
+    if(glfwGetKey(win, GLFW_KEY_UP) == GLFW_PRESS)
+    {
+        camPos += glm::normalize(glm::cross(glm::cross(camUp, camFront),camFront)) * camSpeed;
+    }
+    if(glfwGetKey(win, GLFW_KEY_A) == GLFW_PRESS)
+    {//camPos == camFront
+        camPos -= glm::normalize(glm::cross(camUp,camFront)) * camSpeed;
+    }
+    if(glfwGetKey(win, GLFW_KEY_DOWN) == GLFW_PRESS)
+    {
+        camPos -= glm::normalize(glm::cross(glm::cross(camUp, camFront),camFront)) * camSpeed;
+    }
+    if(glfwGetKey(win, GLFW_KEY_W) == GLFW_PRESS)
+    {
+        camPos += camFront * camSpeed;
+    }
+    if(glfwGetKey(win, GLFW_KEY_S) == GLFW_PRESS)
+    {
+        camPos -= camFront * camSpeed;
+    }
+    
+    
+}
 
-     while (!glfwWindowShouldClose(window))
-     {
+};
+class Main{
+public: static void framebuffer_size_call(GLFWwindow* window, int width, int height){
+glViewport(0,0,width,height);
+}
+
+public: static void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+ static float sensitivity = 0.1f;
+
+ if(first_mouse){
+    lastx = xpos;
+    lasty = ypos;
+    first_mouse = false;
+
+ }
+
+ float xoffset = xpos - lastx;
+ float yoffset = lasty - ypos;
+ lastx = xpos;
+ lasty = ypos;
+
+ xoffset *= sensitivity;
+ yoffset *= sensitivity;
+
+ yaw   += xoffset;
+ pitch += yoffset;
+
+ if(pitch > 89.0f){
+    pitch = 89.0f;
+
+ }
+ if(pitch < -89.0f){
+    pitch = -89.0f;
+ }
+
+ glm::vec3 front;
+ front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+ front.y = sin(glm::radians(pitch));
+ front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+ camFront = glm::normalize(front);
+
+}
+
+public: static void scroll_callback(GLFWwindow*, double xoffset, double yoffset){
+fov -= (float)yoffset;
+if(fov < 1.0f) fov = 1.0f;
+if(fov > 45.0f) fov = 45.0f;
+}
+
+public: static void main(){
+
+glfwInit();
+glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+GLFWwindow* window = glfwCreateWindow(800,600,".>Mary_Ann<.",NULL,NULL);
+if(window == NULL){
+std::cout<<"failed to create the window...."<<std::endl;
+}
+glfwMakeContextCurrent(window);
+
+
+Events* evs = new Events(window);
+
+if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+std::cout<<"Failed to load the f'ing glad..."<<std::endl;
+}
+glViewport(0,0,800,600);
+
+glfwSetCursorPosCallback(window, mouse_callback);
+glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+glfwSetScrollCallback(window, scroll_callback);
+glfwSetFramebufferSizeCallback(window, framebuffer_size_call);
+
+glEnable(GL_DEPTH_TEST);
+
+Triangle* tr_1 = new Triangle("../assets/textures/ai88.png","triTexture", GL_TEXTURE0);
+Cube* cub_1    = new Cube("../assets/textures/2024-11-02.png","ourTexture", GL_TEXTURE0);
+Cube* cub_2    = new Cube("../assets/textures/ai.jpg","ourTexture", GL_TEXTURE0);
+Cube* cub_3    = new Cube("../assets/textures/2024-11-02.png","ourTexture", GL_TEXTURE0);
+Cube* cub_4    = new Cube("../assets/textures/2024-11-02.png","ourTexture", GL_TEXTURE0);
+
+bool firstLoad_1 = true, firstLoad_2 = true, firstLoad_3 = true ;
+
+while(!glfwWindowShouldClose(window)){
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+glClearColor(0.0,0.0,0.0,1.0);
+
+
+evs->ev();
+/*
+glUseProgram(tr_1->tri_program);
+glBindVertexArray(tr_1->VAO);
+glDrawArrays(GL_TRIANGLES,0,3);
+*/
 
 
 
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(0.1,0.01,0.011,1.0);
 
-//
-setLight(lightProgram);
-setPyramid(pyramidProgram);
 
-//
-        processInputs(window);
-        glfwPollEvents();
-        glfwSwapBuffers(window);
+glUseProgram(cub_1->cube_program);
+if(firstLoad_1){
+    cub_1-> textureUse(cub_1->cube_program);
+    firstLoad_1 = false;
+}
+glBindTexture(GL_TEXTURE_2D, cub_1->texture);
+cub_1->cubeUniform(
+     glm::translate(glm::mat4(1.0f),
+     glm::vec3(0.0f,0.5f,2.0f)
+     ),
 
-     }
-        
+     glm::rotate(glm::mat4(1.0f),
+     (float)glfwGetTime() * glm::radians(45.0f),
+     glm::vec3(1.0f,1.0f,0.0f)),
 
-    glDeleteBuffers(1, &VBOl);
-    glDeleteBuffers(1, &VBOp);
-    glDeleteVertexArrays(1, &VAOl);
-    glDeleteVertexArrays(1, &VAOp);
+     glm::lookAt(
+     camPos,
+     camPos + camFront ,
+     glm::vec3(0.0f,0.0f,1.0f)),
 
-    glfwDestroyWindow(window);
-    glfwTerminate();
-    return 0;
+     glm::perspective(
+     glm::radians(fov),
+     800.0f/600.0f,
+     0.1f,100.0f
+     ),
+
+     glm::vec4(0.1f,1.0f,0.6f,1.0f)
+);
+glBindVertexArray(cub_2->VAO);
+glDrawArrays(GL_TRIANGLES,0,36);
+
+
+
+glUseProgram(cub_2->cube_program);
+if(firstLoad_2){
+    cub_2-> textureUse(cub_2->cube_program);
+    firstLoad_2 = false;
+}
+glBindTexture(GL_TEXTURE_2D, cub_2->texture);
+cub_2->cubeUniform(
+     glm::translate(glm::mat4(1.0f),
+     glm::vec3(1.0f,0.5f,2.0f)
+     ),
+
+     glm::rotate(glm::mat4(1.0f),
+     (float)glfwGetTime() * glm::radians(45.0f),
+     glm::vec3(1.0f,0.0f,1.0f)),
+
+     glm::lookAt(
+     camPos,
+     camPos + camFront ,
+     glm::vec3(0.0f,0.0f,1.0f)),
+
+     glm::perspective(
+     glm::radians(fov),
+     800.0f/600.0f,
+     0.1f,100.0f
+     ),
+
+     glm::vec4(0.2f,0.8f,0.43f,1.0f)
+);
+glBindVertexArray(cub_3->VAO);
+glDrawArrays(GL_TRIANGLES,0,36);
+
+
+glUseProgram(cub_3->cube_program);
+if(firstLoad_3){
+    cub_3-> textureUse(cub_3->cube_program);
+    firstLoad_3 = false;
+}
+glBindTexture(GL_TEXTURE_2D, cub_3->texture);
+cub_3->cubeUniform(
+    glm::translate(glm::mat4(1.0f),
+    glm::vec3(3.0f,0.5f,2.0f)
+    ),
+
+     glm::rotate(glm::mat4(1.0f),
+     (float)glfwGetTime() * glm::radians(45.0f),
+     glm::vec3(0.0f,1.0f,1.0f)),
+
+     glm::lookAt(
+     camPos,
+     camPos + camFront ,
+     glm::vec3(0.0f,0.0f,1.0f)),
+
+     glm::perspective(
+     glm::radians(fov),
+     800.0f/600.0f,
+     0.1f,100.0f
+     ),
+
+     glm::vec4(1.0f,0.7f,0.2f,1.0f)
+);
+glBindVertexArray(cub_3->VAO);
+glDrawArrays(GL_TRIANGLES,0,36);
+
+glfwSwapBuffers(window);
+glfwPollEvents();
+}
+
+cub_3->clean();
+delete cub_3;
+cub_3->clean();
+delete cub_3;
+cub_2->clean();
+delete cub_2;
+cub_1->clean();
+delete cub_1;
+tr_1->clean();
+delete tr_1;
+delete evs;
+
+glfwDestroyWindow(window);
+glfwTerminate();
+}
+};
+
+int main(int argc, char** argv){
+    Main::main();
+return 0;
 }

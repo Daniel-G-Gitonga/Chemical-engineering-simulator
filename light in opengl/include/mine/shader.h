@@ -59,6 +59,7 @@ void uniforms(glm::mat4,  const char* name);
 void uniforms(glm::vec3 a,  const char* name);
 void uniforms(glm::vec4 a,  const char* name);
 void useProgram();
+void clean();
 ~Shader();
 };
 

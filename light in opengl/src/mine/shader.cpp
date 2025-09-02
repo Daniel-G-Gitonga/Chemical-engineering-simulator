@@ -94,7 +94,14 @@ glUniform3fv(glGetUniformLocation(main_program, name), 1, glm::value_ptr(a));
 void Shader::useProgram(){
     glUseProgram(main_program);
 }
-Shader::~Shader(){}
+void Shader::clean(){
+     glDeleteShader(vertex_shader);
+    glDeleteShader(fragment_shader);
+    glDeleteProgram(main_program);
+}
+Shader::~Shader(){
+
+}
 }
 //base line of use.. load shader
 //setup(calls everything else we previously defined...)

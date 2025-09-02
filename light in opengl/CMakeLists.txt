@@ -21,7 +21,7 @@ src/mine/mine.cpp
 src/mine/window.cpp 
 src/mine/render.cpp 
 src/mine/shader.cpp
-src/mine/cube.cpp
+src/mine/mesh.cpp
 include/mine/events/events.cpp
 ${RESOURCE_FILE})
 

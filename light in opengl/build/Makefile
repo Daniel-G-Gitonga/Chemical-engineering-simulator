@@ -215,29 +215,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/mine/cube.obj: src/mine/cube.cpp.obj
-.PHONY : src/mine/cube.obj
+src/mine/mesh.obj: src/mine/mesh.cpp.obj
+.PHONY : src/mine/mesh.obj
 
 # target to build an object file
-src/mine/cube.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj
-.PHONY : src/mine/cube.cpp.obj
+src/mine/mesh.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj
+.PHONY : src/mine/mesh.cpp.obj
 
-src/mine/cube.i: src/mine/cube.cpp.i
-.PHONY : src/mine/cube.i
+src/mine/mesh.i: src/mine/mesh.cpp.i
+.PHONY : src/mine/mesh.i
 
 # target to preprocess a source file
-src/mine/cube.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/cube.cpp.i
-.PHONY : src/mine/cube.cpp.i
+src/mine/mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.i
+.PHONY : src/mine/mesh.cpp.i
 
-src/mine/cube.s: src/mine/cube.cpp.s
-.PHONY : src/mine/cube.s
+src/mine/mesh.s: src/mine/mesh.cpp.s
+.PHONY : src/mine/mesh.s
 
 # target to generate assembly for a file
-src/mine/cube.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/cube.cpp.s
-.PHONY : src/mine/cube.cpp.s
+src/mine/mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.s
+.PHONY : src/mine/mesh.cpp.s
 
 src/mine/mine.obj: src/mine/mine.cpp.obj
 .PHONY : src/mine/mine.obj
@@ -354,9 +354,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/mine/cube.obj
-	@echo ... src/mine/cube.i
-	@echo ... src/mine/cube.s
+	@echo ... src/mine/mesh.obj
+	@echo ... src/mine/mesh.i
+	@echo ... src/mine/mesh.s
 	@echo ... src/mine/mine.obj
 	@echo ... src/mine/mine.i
 	@echo ... src/mine/mine.s

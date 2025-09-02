@@ -161,20 +161,20 @@ CMakeFiles/OpenGL.dir/src/mine/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/shader.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp" -o CMakeFiles\OpenGL.dir\src\mine\shader.cpp.s
 
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/cube.cpp
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\cube.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\cube.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\cube.cpp"
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/mesh.cpp
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp"
 
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/cube.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\cube.cpp" > CMakeFiles\OpenGL.dir\src\mine\cube.cpp.i
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" > CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.i
 
-CMakeFiles/OpenGL.dir/src/mine/cube.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/cube.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\cube.cpp" -o CMakeFiles\OpenGL.dir\src\mine\cube.cpp.s
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.s
 
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
@@ -204,7 +204,7 @@ OpenGL_OBJECTS = \
 "CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj" \
 "CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj" \
 "CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj" \
-"CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj" \
+"CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj" \
 "CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj" \
 "CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj"
 
@@ -217,7 +217,7 @@ OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj
-OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj
+OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/build.make

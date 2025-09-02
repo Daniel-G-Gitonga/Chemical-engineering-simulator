@@ -37,9 +37,9 @@
 },
 {
   "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\cube.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\cube.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/cube.cpp",
-  "output": "CMakeFiles/OpenGL.dir/src/mine/cube.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\mesh.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\mesh.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/mesh.cpp",
+  "output": "CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
 },
 {
   "directory": "C:/Chemical-engineering-simulator/light in opengl/build",

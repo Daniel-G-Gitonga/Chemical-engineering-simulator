@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGL.dir/src/glad.c.obj.d"
   "CMakeFiles/OpenGL.dir/src/main.cpp.obj"
   "CMakeFiles/OpenGL.dir/src/main.cpp.obj.d"
+  "CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj"
+  "CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj.d"
   "CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
   "CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj.d"
   "CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj"

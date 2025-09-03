@@ -13,6 +13,7 @@ black_scr->initRenderer(800,600,"black_scr");
 while(!black_scr->closeWin()){
     black_scr->render();
     black_scr->events(black_scr->window);
+    black_scr->fly_cam_events(black_scr->window);
 }
 black_scr->destroyRenderer();
 delete black_scr;

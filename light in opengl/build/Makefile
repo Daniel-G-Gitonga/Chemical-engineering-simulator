@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Chemical-engineering-simulator\light in opengl"
+CMAKE_SOURCE_DIR = "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Chemical-engineering-simulator\light in opengl\build"
+CMAKE_BINARY_DIR = "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,16 +86,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" "C:\Chemical-engineering-simulator\light in opengl\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" "C:\Chemical-engineering-simulator\light in opengl\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" 0
 .PHONY : codegen
 
 # The main clean target
@@ -214,6 +214,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/mine/camera.obj: src/mine/camera.cpp.obj
+.PHONY : src/mine/camera.obj
+
+# target to build an object file
+src/mine/camera.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj
+.PHONY : src/mine/camera.cpp.obj
+
+src/mine/camera.i: src/mine/camera.cpp.i
+.PHONY : src/mine/camera.i
+
+# target to preprocess a source file
+src/mine/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/camera.cpp.i
+.PHONY : src/mine/camera.cpp.i
+
+src/mine/camera.s: src/mine/camera.cpp.s
+.PHONY : src/mine/camera.s
+
+# target to generate assembly for a file
+src/mine/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/src/mine/camera.cpp.s
+.PHONY : src/mine/camera.cpp.s
 
 src/mine/mesh.obj: src/mine/mesh.cpp.obj
 .PHONY : src/mine/mesh.obj
@@ -354,6 +378,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/mine/camera.obj
+	@echo ... src/mine/camera.i
+	@echo ... src/mine/camera.s
 	@echo ... src/mine/mesh.obj
 	@echo ... src/mine/mesh.i
 	@echo ... src/mine/mesh.s

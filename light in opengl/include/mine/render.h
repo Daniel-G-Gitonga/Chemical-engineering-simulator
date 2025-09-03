@@ -3,6 +3,7 @@
 #include <string>
 
 #include "mine/window.h"
+#include "mine/mesh.h"
 
 namespace rose{
     class Render : public Window{

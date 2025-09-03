@@ -1,50 +1,56 @@
 [
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\main.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\main.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/main.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\main.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\main.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/main.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/main.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/OpenGL.dir/includes_C.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\glad.c.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\glad.c\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/glad.c",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe  @CMakeFiles/OpenGL.dir/includes_C.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\glad.c.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\glad.c\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/glad.c",
   "output": "CMakeFiles/OpenGL.dir/src/glad.c.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\mine.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\mine.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/mine.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\mine.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\mine.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/mine.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\window.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\window.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/window.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\window.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\window.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/window.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\render.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\render.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/render.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\render.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\render.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/render.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\shader.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\shader.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/shader.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\shader.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\shader.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/shader.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\mesh.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\mesh.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/src/mine/mesh.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\mesh.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\mesh.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/mesh.cpp",
   "output": "CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
 },
 {
-  "directory": "C:/Chemical-engineering-simulator/light in opengl/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\include\\mine\\events\\events.cpp.obj -c \"C:\\Chemical-engineering-simulator\\light in opengl\\include\\mine\\events\\events.cpp\"",
-  "file": "C:/Chemical-engineering-simulator/light in opengl/include/mine/events/events.cpp",
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\src\\mine\\camera.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\src\\mine\\camera.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/src/mine/camera.cpp",
+  "output": "CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj"
+},
+{
+  "directory": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/OpenGL.dir/includes_CXX.rsp -g -o CMakeFiles\\OpenGL.dir\\include\\mine\\events\\events.cpp.obj -c \"C:\\Chemical-engineering-simulator\\Chemical-engineering-simulator\\light in opengl\\include\\mine\\events\\events.cpp\"",
+  "file": "C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light in opengl/include/mine/events/events.cpp",
   "output": "CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj"
 }
 ]

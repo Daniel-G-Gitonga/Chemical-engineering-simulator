@@ -3,13 +3,12 @@
 #include <iostream>
 #include <string>
 #include <glad/glad.h>
-#include <GLFW/glfw3.h>
 
 #include "mine/events/events.h"
 
 namespace rose{
 
-class Window : public Events{
+class Window : public Events , public CameraF_Evs{
 public:
 Window();
 GLFWwindow* window;

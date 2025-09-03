@@ -8,11 +8,13 @@ for lighting lets do cube first
 */
 
 #include <vector>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include "mine/shader.h"
-
+#include "mine/camera.h"
 
 namespace rose{
-class Mesh : public Shader{
+class Mesh : public Shader , public FlyCam{
 public:
 std::vector<float> Vertex;
 GLuint VBO,VAO,prog;

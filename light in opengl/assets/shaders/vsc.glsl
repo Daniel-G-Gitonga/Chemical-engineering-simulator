@@ -7,9 +7,8 @@ out vec2 TextC_c;
 
 uniform mat4 model;
 uniform mat4 view;
-uniform mat4 projection;
 
 void main(){
     TextC_c = textCoords_c;
-    gl_Position =  vec4(pos_c, 1.0f);
+    gl_Position =  view * model * vec4(pos_c, 1.0f);
 }

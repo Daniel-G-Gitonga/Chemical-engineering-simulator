@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Chemical-engineering-simulator\light in opengl"
+CMAKE_SOURCE_DIR = "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Chemical-engineering-simulator\light in opengl\build"
+CMAKE_BINARY_DIR = "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OpenGL.dir/depend.make
@@ -73,128 +73,143 @@ CMakeFiles/OpenGL.dir/codegen:
 
 CMakeFiles/OpenGL.dir/src/main.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/main.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/main.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/main.cpp
+CMakeFiles/OpenGL.dir/src/main.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/main.cpp
 CMakeFiles/OpenGL.dir/src/main.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/src/main.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/main.cpp.obj -MF CMakeFiles\OpenGL.dir\src\main.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\main.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/src/main.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/main.cpp.obj -MF CMakeFiles\OpenGL.dir\src\main.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\main.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\main.cpp"
 
 CMakeFiles/OpenGL.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/main.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\main.cpp" > CMakeFiles\OpenGL.dir\src\main.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\main.cpp" > CMakeFiles\OpenGL.dir\src\main.cpp.i
 
 CMakeFiles/OpenGL.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/main.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\main.cpp" -o CMakeFiles\OpenGL.dir\src\main.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\main.cpp" -o CMakeFiles\OpenGL.dir\src\main.cpp.s
 
 CMakeFiles/OpenGL.dir/src/glad.c.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/glad.c.obj: CMakeFiles/OpenGL.dir/includes_C.rsp
-CMakeFiles/OpenGL.dir/src/glad.c.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/glad.c
+CMakeFiles/OpenGL.dir/src/glad.c.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/glad.c
 CMakeFiles/OpenGL.dir/src/glad.c.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/OpenGL.dir/src/glad.c.obj"
-	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/glad.c.obj -MF CMakeFiles\OpenGL.dir\src\glad.c.obj.d -o CMakeFiles\OpenGL.dir\src\glad.c.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\glad.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/OpenGL.dir/src/glad.c.obj"
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/glad.c.obj -MF CMakeFiles\OpenGL.dir\src\glad.c.obj.d -o CMakeFiles\OpenGL.dir\src\glad.c.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\glad.c"
 
 CMakeFiles/OpenGL.dir/src/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/OpenGL.dir/src/glad.c.i"
-	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\glad.c" > CMakeFiles\OpenGL.dir\src\glad.c.i
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\glad.c" > CMakeFiles\OpenGL.dir\src\glad.c.i
 
 CMakeFiles/OpenGL.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/OpenGL.dir/src/glad.c.s"
-	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\glad.c" -o CMakeFiles\OpenGL.dir\src\glad.c.s
+	C:\msys64\ucrt64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\glad.c" -o CMakeFiles\OpenGL.dir\src\glad.c.s
 
 CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/mine.cpp
+CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/mine.cpp
 CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\mine.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\mine.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/mine.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\mine.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\mine.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp"
 
 CMakeFiles/OpenGL.dir/src/mine/mine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/mine.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp" > CMakeFiles\OpenGL.dir\src\mine\mine.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp" > CMakeFiles\OpenGL.dir\src\mine\mine.cpp.i
 
 CMakeFiles/OpenGL.dir/src/mine/mine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/mine.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp" -o CMakeFiles\OpenGL.dir\src\mine\mine.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mine.cpp" -o CMakeFiles\OpenGL.dir\src\mine\mine.cpp.s
 
 CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/window.cpp
+CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/window.cpp
 CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\window.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\window.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\window.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\window.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp"
 
 CMakeFiles/OpenGL.dir/src/mine/window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/window.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp" > CMakeFiles\OpenGL.dir\src\mine\window.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp" > CMakeFiles\OpenGL.dir\src\mine\window.cpp.i
 
 CMakeFiles/OpenGL.dir/src/mine/window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/window.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp" -o CMakeFiles\OpenGL.dir\src\mine\window.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\window.cpp" -o CMakeFiles\OpenGL.dir\src\mine\window.cpp.s
 
 CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/render.cpp
+CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/render.cpp
 CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\render.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\render.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\render.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\render.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp"
 
 CMakeFiles/OpenGL.dir/src/mine/render.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/render.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp" > CMakeFiles\OpenGL.dir\src\mine\render.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp" > CMakeFiles\OpenGL.dir\src\mine\render.cpp.i
 
 CMakeFiles/OpenGL.dir/src/mine/render.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/render.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp" -o CMakeFiles\OpenGL.dir\src\mine\render.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\render.cpp" -o CMakeFiles\OpenGL.dir\src\mine\render.cpp.s
 
 CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/shader.cpp
+CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/shader.cpp
 CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\shader.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\shader.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\shader.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\shader.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp"
 
 CMakeFiles/OpenGL.dir/src/mine/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/shader.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp" > CMakeFiles\OpenGL.dir\src\mine\shader.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp" > CMakeFiles\OpenGL.dir\src\mine\shader.cpp.i
 
 CMakeFiles/OpenGL.dir/src/mine/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/shader.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp" -o CMakeFiles\OpenGL.dir\src\mine\shader.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\shader.cpp" -o CMakeFiles\OpenGL.dir\src\mine\shader.cpp.s
 
 CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/src/mine/mesh.cpp
+CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/mesh.cpp
 CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp"
 
 CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" > CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" > CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.i
 
 CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\mesh.cpp" -o CMakeFiles\OpenGL.dir\src\mine\mesh.cpp.s
+
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/src/mine/camera.cpp
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj -MF CMakeFiles\OpenGL.dir\src\mine\camera.cpp.obj.d -o CMakeFiles\OpenGL.dir\src\mine\camera.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\camera.cpp"
+
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/src/mine/camera.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\camera.cpp" > CMakeFiles\OpenGL.dir\src\mine\camera.cpp.i
+
+CMakeFiles/OpenGL.dir/src/mine/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/src/mine/camera.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\src\mine\camera.cpp" -o CMakeFiles\OpenGL.dir\src\mine\camera.cpp.s
 
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/include/mine/events/events.cpp
+CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/include/mine/events/events.cpp
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj: CMakeFiles/OpenGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj -MF CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.obj.d -o CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.obj -c "C:\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj -MF CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.obj.d -o CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.obj -c "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp"
 
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.i"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp" > CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.i
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp" > CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.i
 
 CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.s"
-	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp" -o CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.s
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\include\mine\events\events.cpp" -o CMakeFiles\OpenGL.dir\include\mine\events\events.cpp.s
 
 CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj: CMakeFiles/OpenGL.dir/flags.make
-CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj: C:/Chemical-engineering-simulator/light\ in\ opengl/assets/icons/resources.rc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building RC object CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj"
-	C:\msys64\ucrt64\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) "C:\Chemical-engineering-simulator\light in opengl\assets\icons\resources.rc" CMakeFiles\OpenGL.dir\assets\icons\resources.rc.obj
+CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj: C:/Chemical-engineering-simulator/Chemical-engineering-simulator/light\ in\ opengl/assets/icons/resources.rc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building RC object CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj"
+	C:\msys64\ucrt64\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\assets\icons\resources.rc" CMakeFiles\OpenGL.dir\assets\icons\resources.rc.obj
 
 # Object files for target OpenGL
 OpenGL_OBJECTS = \
@@ -205,6 +220,7 @@ OpenGL_OBJECTS = \
 "CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj" \
 "CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj" \
 "CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj" \
+"CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj" \
 "CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj" \
 "CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj"
 
@@ -218,13 +234,14 @@ OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/window.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/render.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/shader.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/mesh.cpp.obj
+OpenGL.exe: CMakeFiles/OpenGL.dir/src/mine/camera.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/include/mine/events/events.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/assets/icons/resources.rc.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/build.make
 OpenGL.exe: CMakeFiles/OpenGL.dir/linkLibs.rsp
 OpenGL.exe: CMakeFiles/OpenGL.dir/objects1.rsp
 OpenGL.exe: CMakeFiles/OpenGL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable OpenGL.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable OpenGL.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\OpenGL.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -236,6 +253,6 @@ CMakeFiles/OpenGL.dir/clean:
 .PHONY : CMakeFiles/OpenGL.dir/clean
 
 CMakeFiles/OpenGL.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Chemical-engineering-simulator\light in opengl" "C:\Chemical-engineering-simulator\light in opengl" "C:\Chemical-engineering-simulator\light in opengl\build" "C:\Chemical-engineering-simulator\light in opengl\build" "C:\Chemical-engineering-simulator\light in opengl\build\CMakeFiles\OpenGL.dir\DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build" "C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light in opengl\build\CMakeFiles\OpenGL.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/OpenGL.dir/depend
 

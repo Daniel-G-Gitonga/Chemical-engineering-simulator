@@ -22,6 +22,7 @@ src/mine/window.cpp
 src/mine/render.cpp 
 src/mine/shader.cpp
 src/mine/mesh.cpp
+src/mine/camera.cpp
 include/mine/events/events.cpp
 ${RESOURCE_FILE})
 

@@ -77,8 +77,11 @@ namespace rose{
       glDrawArrays(GL_TRIANGLES, 0, 36);
 
   glm::mat4 model = glm::mat4(1.0f);
-  glm::mat4 view = glm::mat4(1.0f);
-  glm::mat4 projection = glm::mat4(1.0f);
+  model = glm::translate(model, glm::vec3(1.0f,0.0f,0.0f));
+  model = glm::scale(model, glm::vec3(0.3f,0.3f,0.3f));
+
+  uniforms(model,"model");
+  uniforms(view(), "view");
       
    }
    void Cube::release_c(){
@@ -146,8 +149,10 @@ namespace rose{
       glDrawArrays(GL_TRIANGLES, 0, 18);
 
   glm::mat4 model = glm::mat4(1.0f);
-  glm::mat4 view = glm::mat4(1.0f);
-  glm::mat4 projection = glm::mat4(1.0f);
+  model = glm::rotate(model, (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f,0.0f,1.0f));
+
+  uniforms(model,"model");
+  uniforms(view(), "view");
 
    }
    void Pyramid::release_c(){

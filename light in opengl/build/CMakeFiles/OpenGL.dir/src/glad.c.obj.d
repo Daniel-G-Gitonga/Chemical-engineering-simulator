@@ -1,5 +1,5 @@
 CMakeFiles/OpenGL.dir/src/glad.c.obj: \
- C:\Chemical-engineering-simulator\light\ in\ opengl\src\glad.c \
+ C:\Chemical-engineering-simulator\Chemical-engineering-simulator\light\ in\ opengl\src\glad.c \
  C:/msys64/ucrt64/include/stdio.h \
  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
  C:/msys64/ucrt64/include/corecrt.h C:/msys64/ucrt64/include/_mingw.h \
@@ -20,8 +20,8 @@ CMakeFiles/OpenGL.dir/src/glad.c.obj: \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
  C:/msys64/ucrt64/include/errno.h C:/msys64/ucrt64/include/string.h \
  C:/msys64/ucrt64/include/sec_api/string_s.h \
- C:/CHEMIC~1/LIGHTI~1/include/glad/glad.h \
- C:/CHEMIC~1/LIGHTI~1/include/KHR/khrplatform.h \
+ C:/CHEMIC~1/CHEMIC~1/LIGHTI~1/include/glad/glad.h \
+ C:/CHEMIC~1/CHEMIC~1/LIGHTI~1/include/KHR/khrplatform.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
  C:/msys64/ucrt64/include/stdint.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \

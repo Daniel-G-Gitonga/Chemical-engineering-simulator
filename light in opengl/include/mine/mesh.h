@@ -20,7 +20,7 @@ std::vector<float> Vertex;
 GLuint VBO,VAO,prog;
 
 virtual void set_c() = 0;
-virtual void draw_c()= 0;
+virtual void draw_c(glm::mat4 cam)= 0;
 virtual void release_c() = 0;
 
 };
@@ -29,7 +29,7 @@ class Cube : public Mesh{
 public:
 Cube();
 void set_c();
-void draw_c();
+void draw_c(glm::mat4 cam);
 void release_c();
 ~Cube();
 };
@@ -37,7 +37,7 @@ class Pyramid : public Mesh{
 public:
 Pyramid();
 void set_c();
-void draw_c();
+void draw_c(glm::mat4 cam);
 void release_c();
 ~Pyramid();
 };

@@ -71,17 +71,17 @@ namespace rose{
     loadShader("../assets/shaders/fsc.glsl", "../assets/shaders/vsc.glsl");
     setUp(prog);
    }
-   void Cube::draw_c(){
+   void Cube::draw_c(glm::mat4 cam){
       glBindVertexArray(VAO);
       useProgram();
       glDrawArrays(GL_TRIANGLES, 0, 36);
 
   glm::mat4 model = glm::mat4(1.0f);
   model = glm::translate(model, glm::vec3(1.0f,0.0f,0.0f));
-  model = glm::scale(model, glm::vec3(0.3f,0.3f,0.3f));
+ // model = glm::scale(model, glm::vec3(0.3f,0.3f,0.3f));
 
   uniforms(model,"model");
-  uniforms(view(), "view");
+  uniforms(cam, "view");
       
    }
    void Cube::release_c(){
@@ -143,7 +143,7 @@ namespace rose{
     loadShader("../assets/shaders/fsp.glsl", "../assets/shaders/vsp.glsl");
     setUp(prog);
    }
-   void Pyramid::draw_c(){
+   void Pyramid::draw_c(glm::mat4 cam){
       glBindVertexArray(VAO);
       useProgram();
       glDrawArrays(GL_TRIANGLES, 0, 18);
@@ -152,7 +152,7 @@ namespace rose{
   model = glm::rotate(model, (float)glfwGetTime() * glm::radians(45.0f), glm::vec3(0.0f,0.0f,1.0f));
 
   uniforms(model,"model");
-  uniforms(view(), "view");
+  uniforms(cam, "view");
 
    }
    void Pyramid::release_c(){

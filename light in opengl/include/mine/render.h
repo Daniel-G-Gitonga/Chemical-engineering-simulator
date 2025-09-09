@@ -4,6 +4,7 @@
 
 #include "mine/window.h"
 #include "mine/mesh.h"
+#include "mine/camera.h"
 
 namespace rose{
     class Render : public Window{

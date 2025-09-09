@@ -10,5 +10,5 @@ uniform mat4 view;
 
 void main(){
     TextC_p = textCoords_p;
-    gl_Position = *view * model * vec4(pos_p, 1.0f);
+    gl_Position = view * model * vec4(pos_p, 1.0f);
 }

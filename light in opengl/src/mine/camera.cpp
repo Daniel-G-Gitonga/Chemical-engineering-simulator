@@ -22,14 +22,15 @@ glm::mat4 view();
 namespace rose{
 
 FlyCam::FlyCam(){}
-void FlyCam::set_init_cam(){
-    cameraPos = glm::vec3(0.0f,0.0f,3.0f);
-    cameraFront = glm::vec3(0.0f,0.0f,-1.0f);
-    cameraUp = glm::vec3(0.0f,1.0f,0.0f);
+void FlyCam::set_init_cam(glm::vec3 camPos, glm::vec3 camFront, glm::vec3 camUp){
+  glm::vec3  cameraPos = camPos;
+  glm::vec3  cameraFront = camFront;
+  glm::vec3  cameraUp = camUp;
 }
 glm::mat4 FlyCam::view(){
+
     glm::mat4 cam = glm::mat4(1.0f);
-    cam = glm::lookAt(cameraPos, cameraPos - cameraFront, cameraUp);
+    cam = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
     glm::mat4 projection = glm::mat4(1.0f);
     projection = glm::perspective(glm::radians(fov), 800.0f/600.0f, 0.1f, 100.0f);

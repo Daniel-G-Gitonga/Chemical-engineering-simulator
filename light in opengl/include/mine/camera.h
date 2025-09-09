@@ -21,12 +21,9 @@ all objects must have the camera(view) matrix
 namespace rose{
     class Camera {
 public:
-glm::vec3 cameraPos;
-glm::vec3 cameraFront;
-glm::vec3 cameraUp;
 float fov;
 
-virtual void set_init_cam() = 0;
+virtual void set_init_cam(glm::vec3 camPos, glm::vec3 camFront, glm::vec3 camUp) = 0;
 virtual glm::mat4 view() = 0;
 
     };
@@ -34,7 +31,11 @@ virtual glm::mat4 view() = 0;
     class FlyCam : public Camera{
 public:
 FlyCam();
-void set_init_cam();
+glm::vec3 cameraPos;
+glm::vec3 cameraFront;
+glm::vec3 cameraUp;
+
+void set_init_cam(glm::vec3 camPos, glm::vec3 camFront, glm::vec3 camUp);
 glm::mat4 view();
 ~FlyCam();
     };

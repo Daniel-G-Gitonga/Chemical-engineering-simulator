@@ -1,1 +1,1 @@
-  -LC:/CHEMIC~1/CHEMIC~1/LIGHTI~1/libs  -lglfw3 -lopengl32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -LC:/CHEMIC~1/CHEMIC~1/CHEMIC~1/LIGHTI~1/libs  -lglfw3 -lopengl32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

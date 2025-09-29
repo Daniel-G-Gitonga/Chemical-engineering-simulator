@@ -1,0 +1,27 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.3.48",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "extras" : {
+                "jbeam" : {
+                    "export_format" : 1
+                },
+                "glTF2ExportSettings" : {
+                    "export_cameras" : 1,
+                    "export_current_frame" : 1,
+                    "export_extras" : 1,
+                    "export_format" : "GLTF_SEPARATE",
+                    "export_image_format" : "JPEG",
+                    "export_lights" : 1,
+                    "export_texture_dir" : "ocean",
+                    "use_selection" : 1
+                }
+            },
+            "name" : "Scene"
+        }
+    ]
+}

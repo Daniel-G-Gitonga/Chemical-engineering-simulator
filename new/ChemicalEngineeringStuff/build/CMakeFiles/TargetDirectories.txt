@@ -1,0 +1,9 @@
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/CMakeFiles/edit_cache.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/CMakeFiles/rebuild_cache.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/core/CMakeFiles/core.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/core/CMakeFiles/glad.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/core/CMakeFiles/edit_cache.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/core/CMakeFiles/rebuild_cache.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/sandBox/CMakeFiles/sandBox.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/sandBox/CMakeFiles/edit_cache.dir
+C:/Users/USER/Desktop/ChemicalEngineeringStuff/build/sandBox/CMakeFiles/rebuild_cache.dir

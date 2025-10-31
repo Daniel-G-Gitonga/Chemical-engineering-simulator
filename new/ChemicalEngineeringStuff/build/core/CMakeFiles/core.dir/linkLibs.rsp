@@ -1,0 +1,1 @@
+  -LC:/Users/USER/Desktop/ChemicalEngineeringStuff/core/Libs  libglad.a -lglfw3dll -lopengl32 -lopengl32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

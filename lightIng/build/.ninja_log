@@ -1,0 +1,5 @@
+# ninja log v7
+5	2300	1759370600808203411	CMakeFiles/Light.dir/src/glad.c.o	928a3fad5e94b933
+1	11183	1759370600804203411	CMakeFiles/Light.dir/src/main.cpp.o	4ee16c79ab6bca11
+43	3652	1760834479743894677	build.ninja	b7086e04cf255b79
+43	3652	1760834479743894677	/data/data/com.termux/files/home/Chemical-engineering-simulator/lightIng/build/cmake_install.cmake	b7086e04cf255b79

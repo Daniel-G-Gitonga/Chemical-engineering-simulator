@@ -10,7 +10,7 @@ chem::mess("Hello world , my nmae is daniel G and I am no one intresting \n \n a
 chem::mess("current working dirrectory==> ");
 std::cout<<argv[0]<<std::endl;
 
-chem::App * sandBox = new chem::App("The Chemical Engineering SandBox",600.0f,600.0f);
+chem::App * sandBox = new chem::App("The Chemical Engineering SandBox",800.0f,600.0f);
 if(sandBox->is_window_ready){
    
        

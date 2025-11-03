@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/Libs" CACHE PATH "INSTALLATION PREFIX FOR ASSIMP")
 project(core CXX)
 
+#defining the link irectory
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/Libs)
+
 
 add_library(
     core SHARED
@@ -11,12 +14,18 @@ add_library(
     src/render.cpp
     
     
+    
 )
 
 target_compile_definitions(core PRIVATE EXPORT_ROSES)
 
 target_include_directories(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/includes)
 target_include_directories(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+#manual linking of libraries
+target_link_libraries(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Libs/libassimp.a)#assimp static library
+target_link_libraries(core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/Libs/libzlibstatic.a)#assimp static library
+
 
 target_precompile_headers(
         core
@@ -31,9 +40,11 @@ set_source_files_properties(src/src/glad.c PROPERTIES LANGUAGE C)
 add_library(
  glad STATIC
  src/src/glad.c
+ 
 )
 
 target_include_directories(glad PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+
 
 target_link_libraries(
     core
@@ -43,7 +54,11 @@ target_link_libraries(
     OpenGL::GL
     opengl32
     
+ #   libassimp.a
+    
 )
+
+
 
 add_custom_command(
     TARGET core 

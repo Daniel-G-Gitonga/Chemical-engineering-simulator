@@ -31,6 +31,9 @@ chem::Window::Window(std::string title_a, float width_a, float height_a){
 this->title = title_a;
 this->width = width_a;
 this->height = height_a;
+if(!glfwInit()){
+    std::cout<<"failed to initialize glfw "<<std::endl;
+   }
 
 }
 chem::Window::~Window(){

@@ -1,3 +1,3 @@
-C:/Users/USER/Desktop/lightIng/build/CMakeFiles/Light.dir
-C:/Users/USER/Desktop/lightIng/build/CMakeFiles/edit_cache.dir
-C:/Users/USER/Desktop/lightIng/build/CMakeFiles/rebuild_cache.dir
+/data/data/com.termux/files/home/Chemical-engineering-simulator/lightIng/build/CMakeFiles/Light.dir
+/data/data/com.termux/files/home/Chemical-engineering-simulator/lightIng/build/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/Chemical-engineering-simulator/lightIng/build/CMakeFiles/rebuild_cache.dir

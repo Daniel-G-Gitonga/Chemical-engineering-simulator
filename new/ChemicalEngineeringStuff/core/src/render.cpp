@@ -6,7 +6,7 @@
 #include "stb_image.h"
 
 chem::Render::Render(){
-     chem::Render::initRenderer();
+
 }
 chem::Render::~Render(){
 
@@ -146,14 +146,13 @@ void chem::Render::useProgram(GLuint program){
 chem::Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures){
     this->vertex = vertices;
     this->indices = indices;
-   // this->textures = textures;
+  //  this->textures = textures; //for uniforms ,, test
     //dat test
  
 
     setUp();
 }
 chem::Mesh::~Mesh(){
-
 
 }
 void chem::Mesh::setUp(){
@@ -192,7 +191,7 @@ directory_4_textures = path.substr(0, path.find_last_of("/"))+"/../textures/";
 
 }
 chem::Model::~Model(){
-
+ 
 }
 void chem::Model::load_model(){
    Assimp::Importer importer;
@@ -333,4 +332,12 @@ glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format,GL_UNSIGNED_BYTE
 
 return texture;
 }
-
+void chem::Model::clean(){
+       for(int i = 0; i < meshes.size() ; i++){
+glDeleteVertexArrays(1, &meshes[i].VAO);
+glDeleteBuffers(1, &meshes[i].VBO);
+glDeleteBuffers(1, &meshes[i].EBO);
+glDeleteTextures(1, &meshes[i].texture);
+glDeleteProgram(meshes[i].program_mesh);
+}
+}

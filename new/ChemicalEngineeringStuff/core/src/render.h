@@ -90,6 +90,8 @@ void drawModel(glm::mat4 model);//;draw model as per mesh
 std::vector<Texture> loadMaterialTexture(aiMaterial * material, aiTextureType type, std::string typeName );
 unsigned int load_texture(std::string texture_dir, const char* name_4_texture);
 
+void clean();
+
 private:
 std::vector<Mesh> meshes;
 std::string directory_4_model ;

@@ -20,27 +20,51 @@ void chem::App::setup(){
 }
 void chem::App::run(){
     chem::Render*  main_r = new Render();
-    chem::Model* test_rectangle = new Model("../../Assets/model/abcd.gltf");
+    std::vector<Model> test_rectangle;//vector to store the loaded models for later draw calls
 
-float timer = 0;
-glm::mat4 model = glm::translate(glm::rotate(glm::scale(glm::mat4(1.0f), glm::vec3(0.2f, 0.2f, 0.2f)), glm::radians(0.0f) , glm::vec3(0.5)), glm::vec3(2.0f));
+    
+    for(int i = 0; i < paths.size(); i++){
+     test_rectangle.push_back(Model(paths[i]));
+     //load each model and pass that model to a vector that can later be accessed
+     //the draw call is to draw per vector
+    }
+    
+float timer ;
 
 
     while(!glfwWindowShouldClose(window_g)){
           glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
           glClearColor(1.00f,1.00f,1.00f,1.0f);
 
-timer = static_cast<float>(glfwGetTime()) ;
 
-test_rectangle->drawModel(model);
 
+
+   for(int i = 0; i<test_rectangle.size() ; i++){
+   glm::mat4 model = glm::translate(glm::rotate(glm::scale(glm::mat4(1.0f), glm::vec3(0.2f, 0.2f, 0.2f)), glm::cos(timer) * glm::radians(360.0f) , glm::vec3(1.0,5.0f,1.0f)), positions[i]);
+   timer = static_cast<float>(glfwGetTime()) ;
+    test_rectangle[i].drawModel(model);
+   }
           glfwPollEvents();
           glfwSwapBuffers(window_g);          
          
     }
 
-    
-    delete test_rectangle;
     delete main_r;
 
 }
+void chem::App::set_model_array(std::vector<std::string> path_specified, std::vector<glm::vec3> pos_specified){
+
+
+paths  = path_specified;
+positions = pos_specified;
+
+}
+
+
+
+/*
+notes
+_____
+no memory released in anything, opt later 
+;););)
+*/

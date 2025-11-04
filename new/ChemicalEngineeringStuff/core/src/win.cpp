@@ -20,7 +20,7 @@ bool chem::Window::createWindow(){
     int height_lamb = height;
     glfwMakeContextCurrent(window_g);
 
-   // glfwSetFramebufferSizeCallback(window_g,[](GLFWwindow* window, int width, int height){glViewport(0,0,width, height);});
+    glfwSetFramebufferSizeCallback(window_g,[](GLFWwindow* window, int width, int height){glViewport(0,0,width, height);});
     return true;
 }
 void chem::Window::destroyWindow(){

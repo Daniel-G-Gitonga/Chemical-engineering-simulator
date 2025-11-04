@@ -153,6 +153,8 @@ chem::Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices
     setUp();
 }
 chem::Mesh::~Mesh(){
+
+
 }
 void chem::Mesh::setUp(){
 

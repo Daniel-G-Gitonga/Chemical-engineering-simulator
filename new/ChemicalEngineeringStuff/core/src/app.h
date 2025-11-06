@@ -6,6 +6,9 @@
 #include "pch.h"
 #include "win.h"
 #include "render.h"
+#include "key.h"
+#include "camera.h"
+
 
 namespace chem{
     class CHEM_ENG_ROSE App:public Window{

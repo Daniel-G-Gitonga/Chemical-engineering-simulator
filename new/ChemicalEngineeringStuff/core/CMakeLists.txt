@@ -12,7 +12,8 @@ add_library(
     src/win.cpp
     src/app.cpp
     src/render.cpp
-    
+    src/camera.cpp
+    src/key.cpp
     
     
 )

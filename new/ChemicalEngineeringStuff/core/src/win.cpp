@@ -12,7 +12,7 @@ bool chem::Window::createWindow(){
        printf(" height -> %4f ",height);
     }
 
-    window_g= glfwCreateWindow(width, height, title.c_str(),glfwGetPrimaryMonitor(), NULL );
+    window_g= glfwCreateWindow(width, height, title.c_str(), NULL, NULL );
     if(!window_g){
         std::cout<<"Error creating the window..."<<std::endl;
         return false;
@@ -20,8 +20,10 @@ bool chem::Window::createWindow(){
     int width_lamb = width;
     int height_lamb = height;
     glfwMakeContextCurrent(window_g);
-
+    
    glfwSetFramebufferSizeCallback(window_g,[](GLFWwindow* window, int width, int height){ glViewport(0,0,width, height);});
+    
+    
     return true;
 }
 void chem::Window::destroyWindow(){

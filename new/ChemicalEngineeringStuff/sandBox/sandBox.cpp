@@ -21,12 +21,13 @@ std::cout<<argv[0]<<std::endl;
 ///
 ///loading data here
 std::vector<Model> passed_data;
-passed_data.push_back(pass_model_info("../../Assets/model/abcd.gltf",glm::vec3(0.0f,0.0f,-8.0f)));//function to push into the array
-
+//function to push into the array
+passed_data.push_back(pass_model_info("../../Assets/model/abcd.gltf",glm::vec3(0.0f,2.0f,  0.0f)));//function to push into the array
+passed_data.push_back(pass_model_info("../../Assets/model/HOUSE.gltf",glm::vec3(0.0f,-9.0f,-0.0f)));
 ///
 
 
-chem::App * sandBox = new chem::App("The Chemical Engineering SandBox",800.0f,600.0f);
+chem::App * sandBox = new chem::App("The Chemical Engineering SandBox",800,700);
 
 
 std::vector<std::string> paths_loaded_from_model;

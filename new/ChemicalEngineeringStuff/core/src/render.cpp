@@ -20,7 +20,7 @@ std::cout<<"Failed to initialize glad"<<std::endl;
     
     }else{
         printf("Succesfully initiallized glad");
-        glViewport(0,0, 600, 600 );
+
         std::cout<<"glad context "<<glfwGetCurrentContext()<<std::endl; 
     }
     glEnable(GL_DEPTH_TEST);
@@ -272,11 +272,12 @@ if(mesh->mMaterialIndex >= 0)
 
 return chem::Mesh(vertices, indices, textures);//pls check texture not passed, if changed del this comment also check on material func and load  texture func
 }
-void chem::Model::drawModel(glm::mat4 model){
+void chem::Model::drawModel(glm::mat4 model, glm::mat4 camera){
 for(int i = 0; i < meshes.size() ; i++){
     meshes[i].use_program_for_mesh();
     glUniformMatrix4fv(glGetUniformLocation(meshes[i].program_mesh, "model"), 1, GL_FALSE, glm::value_ptr(model));
     glUniform1i(glGetUniformLocation(meshes[i].program_mesh,"texture"), 0);
+    glUniformMatrix4fv(glGetUniformLocation(meshes[i].program_mesh, "camera"), 1, GL_FALSE, glm::value_ptr(camera));
     meshes[i].renderMesh();
 }
 }

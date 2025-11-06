@@ -86,7 +86,7 @@ Model(std::string path);
 void load_model();
 void processNode(aiNode* node,const aiScene* scene);
 chem::Mesh processMesh(aiMesh* mesh,const aiScene* scene);
-void drawModel(glm::mat4 model);//;draw model as per mesh
+void drawModel(glm::mat4 model , glm::mat4 camera);//;draw model as per mesh
 std::vector<Texture> loadMaterialTexture(aiMaterial * material, aiTextureType type, std::string typeName );
 unsigned int load_texture(std::string texture_dir, const char* name_4_texture);
 

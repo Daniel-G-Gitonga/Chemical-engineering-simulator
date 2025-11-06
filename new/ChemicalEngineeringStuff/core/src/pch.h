@@ -14,3 +14,5 @@
 
 #include <vector>
 #include <memory>
+
+enum view{perspective, orthographic};

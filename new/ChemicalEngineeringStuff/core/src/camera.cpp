@@ -26,7 +26,9 @@ if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS/*D in glfw*/){
     printf("CAMERA POSITION ==> (%.5f,%.5f,%.5f) ",camera_position.x, camera_position.y, camera_position.z);
 }
 if(glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS/*D in glfw*/){
-    camera_position = glm::vec3(0.0f,2.0f,-2.0f);
+    camera_position = glm::vec3(0.0f,2.0f,0.0f);///reset position to y = 2
+    where_rose_looks.y = 2.0f;///reseting the position and
+    where_rose_looks.z = -2.0f;///camera front
     printf("CAMERA POSITION ==> (%.5f,%.5f,%.5f) ",camera_position.x, camera_position.y, camera_position.z);
     speed = 0.85f;
 }
@@ -34,8 +36,10 @@ if(glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS/*D in glfw*/){
     speed += speed;
 }
 
-
-
+if(glfwGetKey(window, GLFW_KEY_LEFT_SHIFT)==GLFW_PRESS){
+glm::vec3 looking_at = camera_position + where_rose_looks;
+printf(" POSITION BEING LOOKED AT ==> (%.6f, %.6f, %.6f) ",looking_at.x ,looking_at.y, looking_at.z);
+}
 
 
 glm::mat4 camera = glm::lookAt(
@@ -89,15 +93,16 @@ yaw += xOffset;
 pitch += yOffset;
 
 
-if(pitch >= 89.0f){
-pitch = 89.0f;
+if(pitch >= 90.0f){
+pitch = 90.0f;
 }if(pitch <= -90.0f){
 pitch = -90.0f;    
 }
 
-
+direction.y =  glm::sin(glm::radians(pitch)) ;
 direction.x = glm::cos(glm::radians(yaw)) + glm::cos(glm::radians(pitch));
-//direction.y =  glm::sin(glm::radians(pitch)) ;
 direction.z = glm::cos(glm::radians(pitch)) + glm::sin(glm::radians(yaw));
+
+
 where_rose_looks = glm::normalize(direction);
 }

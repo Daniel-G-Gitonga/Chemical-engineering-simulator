@@ -146,7 +146,7 @@ void chem::Render::useProgram(GLuint program){
 chem::Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<Texture> textures){
     this->vertex = vertices;
     this->indices = indices;
-  //  this->textures = textures; //for uniforms ,, test
+    this->textures = textures; //for uniforms ,, test
     //dat test
  
 
@@ -169,10 +169,34 @@ useProgram(program_mesh);
 
 }
 void chem::Mesh::renderMesh(){
-  
+  unsigned int diffuse_nr = 1;
+  unsigned int specular_nr = 1;
+  unsigned int normal_nr = 1;
+  unsigned int height_nr = 1;
+
+for(unsigned int i = 0 ; i < textures.size(); i++){
+
+glActiveTexture(GL_TEXTURE0 + i);
+std::string number;
+std::string name = textures[i].name;
+if(name == "texture_specular"){
+   number = std::to_string(specular_nr++);
+}else if(name == "texture_diffuse"){
+   number = std::to_string(diffuse_nr++);
+}else if(name == "texture_normal"){
+   number = std::to_string(normal_nr++);
+}else if(name == "texture_height"){
+   number = std::to_string(height_nr++);
+}
+
+glUniform1i(glGetUniformLocation(program_mesh, (name + number).c_str() ), i);
+glBindTexture(GL_TEXTURE_2D, textures[i].id);
+
+}
+
   glBindVertexArray(VAO);
-  //glBindTexture(GL_TEXTURE_2D, texture);
   glDrawElements(GL_TRIANGLES, indices.size(),GL_UNSIGNED_INT, 0);
+  glActiveTexture(GL_TEXTURE0);
 }
 void chem::Mesh::uniforms(std::string name, int i)
 {
@@ -263,11 +287,19 @@ if(mesh->mMaterialIndex >= 0)
 {
     aiMaterial *material = scene->mMaterials[mesh->mMaterialIndex];
     std::vector<Texture> diffuseMaps = loadMaterialTexture(material, 
-                                        aiTextureType_DIFFUSE, "texture_diffuse");
+                                        aiTextureType_DIFFUSE, "texture_diffuse");//dif maps
     textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
     std::vector<Texture> specularMaps = loadMaterialTexture(material, 
-                                        aiTextureType_SPECULAR, "texture_specular");
+                                        aiTextureType_SPECULAR, "texture_specular");//spec maps
     textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
+    std::vector<Texture> normalMaps = loadMaterialTexture(material,
+                                        aiTextureType_NORMALS, "texture_normal");
+    textures.insert(textures.end(), normalMaps.begin(), normalMaps.end());
+    std::vector<Texture> heightMaps = loadMaterialTexture(material, 
+                                        aiTextureType_HEIGHT, "texture_height");
+    textures.insert(textures.end(), heightMaps.begin(), heightMaps.end());
+
+
 }  
 
 return chem::Mesh(vertices, indices, textures);//pls check texture not passed, if changed del this comment also check on material func and load  texture func
@@ -317,9 +349,6 @@ if(!data){
     std::cout<<"texture spaced wieredly, just avoid spacing, i wont write encordings :) :)"<<std::endl;
 }
 
-glGenTextures(1, &texture);
-glActiveTexture(GL_TEXTURE0);
-glBindTexture(GL_TEXTURE_2D, texture);
 
 //setings
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

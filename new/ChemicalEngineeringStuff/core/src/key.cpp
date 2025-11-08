@@ -1,6 +1,7 @@
 #include "key.h"
 
 int ROSES_HANDS::key_pressed(GLFWwindow* window){
+
 int key_p;
 for(int key = GLFW_KEY_SPACE ; key <= GLFW_KEY_LAST ; key++){
  if(glfwGetKey(window, key) == GLFW_PRESS){

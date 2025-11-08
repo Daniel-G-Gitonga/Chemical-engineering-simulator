@@ -17,8 +17,8 @@ float pitch = 0.0f;
 float roll = 0.0f;
 
 protected:
-glm::vec3 camera_position = glm::vec3(2.0f,2.0f, 2.0f);
-glm::vec3 where_rose_looks = glm::vec3(2.0f,0.0f, -2.0f);
+glm::vec3 camera_position = glm::vec3(0.0f,2.0f, -5.0f);
+glm::vec3 where_rose_looks = glm::vec3(0.0f,2.0f, 2.0f);
 glm::vec3 camera_up = glm::vec3(0.0f,1.0f,0.0f);
 
 
@@ -37,3 +37,16 @@ class Scene_cam : public Camera{
 };
 
 };
+
+/*
+//notes to me...
+in debug cam,,,
+
+mouse control the camera look at position
+WASD control the movement
+so movemt using wasd doest change where the cam looks\\\
+
+idea for cinematic codition camera
+camera locks the position of obj
+camera follows obj keepng locked to obj unless moved with mouse control
+*/

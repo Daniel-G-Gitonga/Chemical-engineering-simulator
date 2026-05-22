@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(lll)
+
+include_directories(lll PUBLIC includes)
+
+add_executable(lll main/main.cpp main/glad.c main/app.cpp main/renderer.cpp  assets/icons/app.rc)
+
+target_link_directories(lll PUBLIC  libs)
+
+target_link_libraries(lll PUBLIC glfw3dll.lib)
+
+add_custom_command(
+    TARGET lll 
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    "${CMAKE_SOURCE_DIR}/build/lll.exe"
+    "${CMAKE_SOURCE_DIR}/exe/"
+)
